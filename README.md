@@ -1,3 +1,7 @@
+#Project Decription :
+
+It is an overall Library Mangement System app with a set of user defined functionalities developed with angular2(Having separate interfaces for a normal user and Admin) 
+
 # Lims
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
