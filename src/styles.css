@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+    /* You can add global styles to this file, and also import other style files */
+    
+    .bgImg {
+        background-image: url("/assets/images/backgroundImage.jpg");
+    }
+    
+    .logo {
+        border-right: 2px solid gray;
+        margin: 5px;
+        padding: 0px 20px;
+    }
