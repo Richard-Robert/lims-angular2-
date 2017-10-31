@@ -1,0 +1,28 @@
+<div class="childComponent">
+    <h2>Home</h2>
+    <div class="bookListHomeScreen container">
+        <div class="row" *ngFor="let book of bookList">
+            <div class="BookListFirstDiv col-md-4">
+                <div class="thumbnail pad0">
+                    <img src={{book.imgSrc}} alt="The Tethered Mage" class="thumbnail">
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class="BookListSecondDiv col-md-8">
+                <h4 [innerHTML]="book.title|uppercase" class="marg0"></h4>
+                <!--<h5 class="bold col-xs-2 pad0">Genre : </h5>-->
+                <h5>
+                    <span class="pad0 red italics" *ngFor="let genre of book.genres;let ndx=index">{{genre}} <span *ngIf="ndx < book.genres.length-1">/</span> </span>
+                </h5>
+                <!--<h5 class="bold">Summary :</h5>-->
+                <hr class="col-xs-12 solidBlackHr" />
+                <p>{{book.shortSummary}}
+                    <span class="readMoreTag">Read More...</span>
+                </p>
+            </div>
+            <hr class="solidGreyHr col-xs-12" />
+        </div>
+    </div>
+</div>

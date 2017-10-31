@@ -1,0 +1,37 @@
+body {
+    margin: 0px;
+}
+
+.pad0 {
+    padding: 0px;
+}
+
+.marg0 {
+    margin: 0px;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.red {
+    color: red;
+}
+
+.solidBlackHr {
+    margin-top: 0px;
+    background-color: black;
+    border: 0px none;
+}
+
+.solidGreyHr {
+    background-color: grey;
+}
