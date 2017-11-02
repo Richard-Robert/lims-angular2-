@@ -19,7 +19,7 @@
                 <!--<h5 class="bold">Summary :</h5>-->
                 <hr class="col-xs-12 solidBlackHr" />
                 <p>{{book.shortSummary}}
-                    <span class="readMoreTag">Read More...</span>
+                    <span class="readMoreTag" (click)="bookDetailsNavigate(book.ISBN)">Read More...</span>
                 </p>
             </div>
             <hr class="solidGreyHr col-xs-12" />
