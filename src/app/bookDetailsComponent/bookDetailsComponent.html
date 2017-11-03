@@ -1,3 +1,47 @@
 <div class="childComponent">
+    <h2>Book Details</h2>
+    <div class="bookListHomeScreen container">
+        <div class="row">
+            <div class="BookListFirstDiv col-md-4">
+                <div class="thumbnail pad0">
+                    <img src={{bookDetails.imgSrc}} alt="The Tethered Mage" class="thumbnail">
+                </div>
+                <div class="">
+                    <label for="test">ISBN : </label><span id="test" class="orangeRed ">   {{bookDetails.ISBN}}</span>
+                </div>
+                <div>
+                    <label for="test">Author : </label><span id="test" class="orangeRed italics"> {{bookDetails.author}}</span>
+                </div>
+                <div>
+                    <label for="test">Published : </label><span id="test" class="orangeRed"> {{bookDetails.published}}</span>
+                </div>
+            </div>
+            <div class="BookListSecondDiv col-md-8">
+                <h4 [innerHTML]="bookDetails.title|uppercase" class="marg0"></h4>
+                <!--<h5 class="bold col-xs-2 pad0">Genre : </h5>-->
+                <h5>
+                    <span class="pad0 red italics" *ngFor="let genre of bookDetails.genres;let ndx=index">{{genre}} <span *ngIf="ndx < bookDetails.genres.length-1">/</span> </span>
+                </h5>
+                <!--<h5 class="bold">Summary :</h5>-->
+                <hr class="col-xs-12 solidBlackHr" />
+                <p>{{bookDetails.prologue}}
 
+                </p>
+            </div>
+            <hr class="solidGreyHr col-xs-12" />
+            <div class="commentsSection">
+                <h2 class="row">Reviews :</h2>
+                <div class="" *ngFor="let comment of bookDetails.comments">
+                    <div class="row">
+                        <div>
+                            By <span class="navyBlue italics bold"> {{comment.name}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{comment.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

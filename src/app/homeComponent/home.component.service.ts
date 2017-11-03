@@ -5,6 +5,6 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponentService {
   constructor(private http: HttpClient) { }
 getBookList() {
-  return this.http.get('./../data.json');
+  return this.http.get('./../../assets/data.json');
 }
 }

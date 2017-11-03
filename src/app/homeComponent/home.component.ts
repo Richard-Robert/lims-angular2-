@@ -10,12 +10,19 @@ import { HomeComponentService } from './home.component.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   // title= 'The Tethered Mage';
-bookList: any = [];
+bookData: any = {
+  bookList: []
+};
 constructor(private router: Router , private _homeComponentService: HomeComponentService) {
 
 }
 ngOnInit(): any {
-this.bookList = this._homeComponentService.getBookList();
+this._homeComponentService.getBookList()
+.subscribe(
+  data => {this.bookData = data; },
+  err => alert(err.statusText),
+  () => console.log('finish')
+);
 }
 ngOnDestroy(): any {
 
