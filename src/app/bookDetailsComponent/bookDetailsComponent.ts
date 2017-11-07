@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {ActivatedRoute  } from '@angular/router';
+import { NgModel } from '@angular/forms';
 
 import { BookDetailsService } from './../bookDetailsComponent/bookDetailsComponent.service';
 
@@ -12,6 +13,7 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 isbn: number;
 bookDetails: any = {};
 sub: any;
+starValue: number;
 constructor(private activatedRoute: ActivatedRoute , private _bookDetailsService: BookDetailsService) {
 
 }
@@ -28,5 +30,8 @@ this.sub = this.activatedRoute.params.subscribe(params => {
 }
 ngOnDestroy () {
   this.sub.unsubscribe();
+}
+test() {
+  console.log(this.starValue);
 }
 }

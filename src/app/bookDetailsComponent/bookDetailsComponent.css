@@ -2,3 +2,29 @@
     height: 250px;
     width: 200px;
 }
+
+.reviewSection {
+    /*background-color: lightgray;*/
+}
+
+.reviewClass {
+    margin: 25px 0px;
+}
+
+:host ::ng-deep .redStar i.star-icon {
+    color: #cf2a23;
+}
+
+:host ::ng-deep .redStar i.star-icon::before {
+    color: #cf2a23;
+}
+
+.commentsSection {
+    border: 1px solid black;
+    height: 200px;
+    margin-top: 25px;
+}
+
+.reviewBtn {
+    margin: 5px 0px;
+}

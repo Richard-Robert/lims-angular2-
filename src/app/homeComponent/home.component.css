@@ -6,4 +6,11 @@
 .readMoreTag {
     color: #f44336;
     font-weight: 600;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+    .BookListFirstDiv {
+        margin-bottom: 80px;
+    }
 }

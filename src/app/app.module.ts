@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { RatingModule } from 'ng2-rating';
 
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -20,7 +21,7 @@ import { BookDetailsService } from './bookDetailsComponent/bookDetailsComponent.
   imports: [
     BrowserModule, RouterModule.forRoot(
       appRoutes, {enableTracing: true}
-    ), HttpClientModule
+    ), HttpClientModule, FormsModule, RatingModule
   ],
   providers: [ HomeComponentService, BookDetailsService ],
   bootstrap: [AppComponent]

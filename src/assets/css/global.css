@@ -15,6 +15,14 @@ body {
     margin: 0px;
 }
 
+.margTop0 {
+    margin-top: 0px;
+}
+
+.margBot0 {
+    margin-bottom: 0px;
+}
+
 .centerAlign {
     text-align: center;
 }
@@ -29,6 +37,10 @@ body {
 
 .red {
     color: red;
+}
+
+.darkerRed {
+    color: #cf2a23;
 }
 
 .orangeRed {

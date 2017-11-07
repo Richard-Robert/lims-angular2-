@@ -6,15 +6,20 @@
                 <div class="thumbnail pad0">
                     <img src={{bookDetails.imgSrc}} alt="The Tethered Mage" class="thumbnail">
                 </div>
+                <div>
+                    <label for="test">Rating : </label>
+                    <rating [(ngModel)]="bookDetails.totalRating" [readonly]="true" class="redStar"></rating>
+                </div>
                 <div class="">
-                    <label for="test">ISBN : </label><span id="test" class="orangeRed ">   {{bookDetails.ISBN}}</span>
+                    <label for="test">ISBN : </label><span id="test" class="red ">   {{bookDetails.ISBN}}</span>
                 </div>
                 <div>
-                    <label for="test">Author : </label><span id="test" class="orangeRed italics"> {{bookDetails.author}}</span>
+                    <label for="test">Author : </label><span id="test" class="red italics"> {{bookDetails.author}}</span>
                 </div>
                 <div>
-                    <label for="test">Published : </label><span id="test" class="orangeRed"> {{bookDetails.published}}</span>
+                    <label for="test">Published : </label><span id="test" class="red"> {{bookDetails.published}}</span>
                 </div>
+
             </div>
             <div class="BookListSecondDiv col-md-8">
                 <h4 [innerHTML]="bookDetails.title|uppercase" class="marg0"></h4>
@@ -28,20 +33,34 @@
 
                 </p>
             </div>
-            <hr class="solidGreyHr col-xs-12" />
-            <div class="commentsSection">
-                <h2 class="row">Reviews :</h2>
-                <div class="" *ngFor="let comment of bookDetails.comments">
-                    <div class="row">
-                        <div>
-                            By <span class="navyBlue italics bold"> {{comment.name}}</span>
-                        </div>
+        </div>
+        <hr class="solidGreyHr col-xs-12" />
+        <div class="reviewSection">
+            <h2 class="">Ratings & Reviews :</h2>
+
+            <div class="reviewClass" *ngFor="let comment of bookDetails.comments">
+                <div class="row marg0">
+                    <div>
+                        <rating [(ngModel)]="comment.rating" [readonly]="true" class="redStar"></rating> &nbsp;- &nbsp; By <span class="navyBlue italics bold"> {{comment.name}}</span> on <span class="italics">{{comment.date}}</span>
                     </div>
-                    <div class="row">
-                        {{comment.content}}
-                    </div>
+                    <h4 class="col-xs-12 pad0 bold margTop0">{{comment.title}}</h4>
+                </div>
+                <div class="row marg0">
+                    {{comment.content}}
                 </div>
             </div>
+            <!--<rating [(ngModel)]="starValue" [max]=5 (click)="test()" [float]="true" class="redStar"></rating>-->
         </div>
+        <hr class="solidGreyHr col-xs-12" />
+        <div class="commentsSection">
+            <div class="ratingStars col-xs-12">
+                <rating [(ngModel)]="starValue" [max]=5 (click)="test()" [float]="true" class="redStar"></rating>
+            </div>
+            <div class="col-xs-8">
+                <textarea placeholder="Enter review here" rows="5" cols="100" class="form-control"></textarea>
+                <button type="submit" class="btn btn-success col-xs-push-10 col-xs-2 reviewBtn">Submit</button>
+            </div>
+        </div>
+
     </div>
 </div>
