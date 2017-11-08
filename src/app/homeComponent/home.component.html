@@ -7,8 +7,8 @@
                     <img src={{book.imgSrc}} alt="The Tethered Mage" class="thumbnail">
                 </div>
                 <div>
-                    <span class="col-xs-12">Author : <span class="red italics">{{book.author}}</span> </span>
-                    <span class="col-xs-12"> Rating :<span class="italics red"> {{book.totalRating}} / 5</span></span>
+                    <span class="col-xs-12 bold"> Rating :<rating [(ngModel)]="book.totalRating" [readonly]="true" class="redStar"></rating></span>
+                    <span class="col-xs-12 bold">Author : <span class="darkerRed italics bold">{{book.author}}</span> </span>
                 </div>
             </div>
             <div class="BookListSecondDiv col-md-8">

@@ -1,12 +1,25 @@
 .thumbnail {
-    height: 250px;
-    width: 200px;
+    height: 225px;
+    width: 180px;
+    margin-bottom: 0px;
 }
 
 .readMoreTag {
     color: #f44336;
     font-weight: 600;
     cursor: pointer;
+}
+
+:host ::ng-deep .redStar i.star-icon {
+    color: #cf2a23;
+}
+
+:host ::ng-deep .redStar i.star-icon::before {
+    color: #cf2a23;
+}
+
+.BookListFirstDiv span {
+    padding-left: 5px;
 }
 
 @media only screen and (max-width: 992px) {
