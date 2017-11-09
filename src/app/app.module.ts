@@ -21,7 +21,7 @@ import { BookDetailsService } from './bookDetailsComponent/bookDetailsComponent.
   imports: [
     BrowserModule, RouterModule.forRoot(
       appRoutes, {enableTracing: true}
-    ), HttpClientModule, FormsModule, RatingModule
+    ), HttpClientModule,FormsModule, ReactiveFormsModule, RatingModule
   ],
   providers: [ HomeComponentService, BookDetailsService ],
   bootstrap: [AppComponent]
