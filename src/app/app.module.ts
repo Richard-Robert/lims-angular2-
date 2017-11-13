@@ -11,6 +11,7 @@ import { HomeComponent } from './homeComponent/home.component';
 import { FavouritesComponent } from './favouritesComponent/fav.component';
 import { BookDetailsComponent } from './bookDetailsComponent/bookDetailsComponent';
 
+import { AuthService } from './auth/auth.service';
 import { HomeComponentService } from './homeComponent/home.component.service';
 import { BookDetailsService } from './bookDetailsComponent/bookDetailsComponent.service';
 
@@ -23,7 +24,7 @@ import { BookDetailsService } from './bookDetailsComponent/bookDetailsComponent.
       appRoutes, {enableTracing: true}
     ), HttpClientModule,FormsModule, ReactiveFormsModule, RatingModule
   ],
-  providers: [ HomeComponentService, BookDetailsService ],
+  providers: [ HomeComponentService, BookDetailsService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
