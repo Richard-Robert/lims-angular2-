@@ -60,7 +60,7 @@ userProfile: any;
     return new Date().getTime() < expiresAt;
   }
 
-//...
+//...User Profile code
 public getProfile(cb): void {
   const accessToken = localStorage.getItem('access_token');
   if (!accessToken) {

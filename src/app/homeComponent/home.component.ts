@@ -17,12 +17,12 @@ constructor(private router: Router , private _homeComponentService: HomeComponen
 
 }
 ngOnInit(): any {
-this._homeComponentService.getBookList()
-.subscribe(
-  data => {this.bookData = data; },
-  err => alert(err.statusText),
-  () => console.log('finish')
-);
+  this._homeComponentService.getBookList()
+  .subscribe(
+    data => {this.bookData = data; },
+    err => alert(err.statusText),
+    () => console.log('finish')
+  );
 }
 ngOnDestroy(): any {
 
