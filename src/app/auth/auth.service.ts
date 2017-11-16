@@ -23,17 +23,32 @@ userProfile: any;
     this.auth0.authorize();
   }
 
-  public handleAuthentication(): void {
+  public handleAuthentication(cb): void {
     this.auth0.parseHash((err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
-        this.setSession(authResult);
-        this.router.navigate(['/home']);
+        if (authResult && authResult.accessToken && authResult.idToken) {
+          window.location.hash = '';
+          this.setSession(authResult);
+          if(this.userProfile)
+              cb(err,this.userProfile);
+          else
+              this.getProfile((err, profile) => {
+                this.userProfile = profile;
+                cb(err,this.userProfile);
+                localStorage.setItem('user_profile', JSON.stringify(this.userProfile));
+            })
+        // this.router.navigate(['/home']);
       } else if (err) {
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
         console.log(err);
       }
+      if(this.userProfile)
+        cb(err,this.userProfile);
+      else{
+        cb(err, JSON.parse(localStorage.getItem('user_profile')));
+      }
+
     });
+
   }
 
   private setSession(authResult): void {
@@ -49,6 +64,8 @@ userProfile: any;
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('user_profile');
+
     // Go back to the home route
     this.router.navigate(['/']);
   }

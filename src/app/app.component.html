@@ -34,7 +34,7 @@
 <!--<img src="../assets/images/logo.jpg" height="1000px" width="500px" alt="">-->
 <div class="content">
     <a href="#" class="fa fa-facebook"></a>
-    <img src={{profile.picture}} alt="">
+    <img *ngIf="profile" src={{profile.picture}} alt="">
 </div>
 <router-outlet></router-outlet>
 <footer id="footer">
