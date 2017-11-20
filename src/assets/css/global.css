@@ -60,3 +60,7 @@ body {
 .solidGreyHr {
     background-color: grey;
 }
+
+.cursorPointer {
+    cursor: pointer;
+}
