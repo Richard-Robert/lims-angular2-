@@ -12,13 +12,21 @@ import { MainAppService } from './app.component.service';
 export class AppComponent implements OnInit{
   title = 'app';
   profile: any;
+  tokenDetails: any;
   constructor(public auth: AuthService, private router: Router, private mainAppService: MainAppService) {  }
 
   ngOnInit(): any {
     this.auth.handleAuthentication((err, profile) => {
         this.profile = profile;
         this.router.navigate(['/home']);
-        this.mainAppService.setProfile(this.profile);
+        this.auth.getApiToken().subscribe(
+          data => {
+            this.tokenDetails = data;
+            this.mainAppService.setUserInfo(this.profile, this.tokenDetails);
+            this.auth.getUser(this.profile.sub);
+          }
+        )
+
       });
 
     // if(this.auth.userProfile) {

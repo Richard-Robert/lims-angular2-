@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 // import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { MainAppService } from './../app.component.service';
 
 @Injectable()
 export class AuthService {
@@ -17,7 +20,7 @@ userProfile: any;
     scope: 'openid profile'
   });
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, private http: HttpClient, private mainService: MainAppService) {}
 
   public login(): void {
     this.auth0.authorize();
@@ -91,5 +94,32 @@ public getProfile(cb): void {
     }
     cb(err, profile);
   });
+}
+public getApiToken() {
+  var body = {
+    client_id: 'oQWobs5nB061aIISN8MLeuBMurTFbdbk',
+    client_secret: '7j78m-tlu5ZfccjTivNptjb9yVsAz6Cxg6cdHdcA5HrFziWgxXHAjnpItn0WI5Ct',
+    audience: 'https://apostle.auth0.com/api/v2/',
+    grant_type: 'client_credentials',
+    scope: 'read:users'
+  }
+  // var response;
+  return this.http.post('https://apostle.auth0.com/oauth/token', body);
+}
+public getUser(id) {
+  var apiToken = this.mainService.getApiToken();
+  var headers = new HttpHeaders().set('authorization','Bearer '+apiToken);
+  this.http.get('https://apostle.auth0.com/api/v2/users/'+id,{headers: headers}).subscribe();
+}
+public updateUser(id) {
+  var apiToken = this.mainService.getApiToken();
+  var headers = new HttpHeaders().set('authorization','Bearer '+apiToken);
+  var body = {
+     "email_verified": true
+  }
+  // this.http.get('https://apostle.auth0.com/api/v2/users/'+id,{headers: headers}).subscribe();
+  this.http.patch('https://apostle.auth0.com/api/v2/users/'+id,body,{headers: headers}).subscribe(
+    // data => console.log(data)
+  );
 }
 }
