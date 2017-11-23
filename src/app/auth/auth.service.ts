@@ -109,7 +109,7 @@ public getApiToken() {
 public getUser(id) {
   var apiToken = this.mainService.getApiToken();
   var headers = new HttpHeaders().set('authorization','Bearer '+apiToken);
-  this.http.get('https://apostle.auth0.com/api/v2/users/'+id,{headers: headers}).subscribe();
+  return this.http.get('https://apostle.auth0.com/api/v2/users/'+id,{headers: headers});
 }
 public updateUser(id) {
   var apiToken = this.mainService.getApiToken();
@@ -117,7 +117,6 @@ public updateUser(id) {
   var body = {
      "email_verified": true
   }
-  // this.http.get('https://apostle.auth0.com/api/v2/users/'+id,{headers: headers}).subscribe();
   this.http.patch('https://apostle.auth0.com/api/v2/users/'+id,body,{headers: headers}).subscribe(
     // data => console.log(data)
   );

@@ -5,10 +5,12 @@ import { BookDetailsComponent  } from './bookDetailsComponent/bookDetailsCompone
 import { UserProfileComponent } from './userProfile/userProfile.component';
 
 export const appRoutes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+
   {path: 'home', component: HomeComponent},
   {path: 'details/:isbn', component: BookDetailsComponent},
   {path: 'favourties', component: FavouritesComponent},
-  {path: 'profile', component: UserProfileComponent}
+  {path: 'profile', component: UserProfileComponent},
   // { path: '**', component: PageNotFoundComponent }
+  {path: 'callback', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];

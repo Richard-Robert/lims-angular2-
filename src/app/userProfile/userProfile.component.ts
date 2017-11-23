@@ -9,6 +9,10 @@ import { AuthService } from './../auth/auth.service';
   styleUrls: ['./../../assets/css/global.css','./userProfile.component.css']
 })
 export class UserProfileComponent  implements OnInit{
+route = {
+  url:'profile',
+  params: ''
+}
 profile:any;
 sub:any;
 
@@ -16,6 +20,7 @@ constructor(private mainAppService: MainAppService, private auth: AuthService) {
 
 ngOnInit():any {
 this.profile = this.mainAppService.getProfile();
+sessionStorage.setItem('lastVisitedRoute',JSON.stringify(this.route));
 }
 ngOnDestroy():any { }
 }

@@ -16,16 +16,25 @@ export class AppComponent implements OnInit{
   constructor(public auth: AuthService, private router: Router, private mainAppService: MainAppService) {  }
 
   ngOnInit(): any {
+    var lastVisitedRoute = JSON.parse(sessionStorage.getItem('lastVisitedRoute'));
     this.auth.handleAuthentication((err, profile) => {
         this.profile = profile;
-        this.router.navigate(['/home']);
+
+        if(this.profile) {
         this.auth.getApiToken().subscribe(
           data => {
             this.tokenDetails = data;
-            this.mainAppService.setUserInfo(this.profile, this.tokenDetails);
-            this.auth.getUser(this.profile.sub);
-          }
-        )
+            this.mainAppService.setApiToken(this.tokenDetails)
+            this.auth.getUser(this.profile.sub||this.profile.user_id).subscribe(
+              data => {
+                      this.profile = data;
+                      this.mainAppService.setUserInfo(this.profile);
+
+                    }
+              )
+            }
+          )
+        }
 
       });
 
