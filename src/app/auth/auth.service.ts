@@ -31,9 +31,9 @@ userProfile: any;
         if (authResult && authResult.accessToken && authResult.idToken) {
           window.location.hash = '';
           this.setSession(authResult);
-          if(this.userProfile)
-              cb(err,this.userProfile);
-          else
+          // if(this.userProfile)
+          //     cb(err,this.userProfile);
+          // else
               this.getProfile((err, profile) => {
                 this.userProfile = profile;
                 cb(err,this.userProfile);
@@ -91,6 +91,7 @@ public getProfile(cb): void {
   this.auth0.client.userInfo(accessToken, (err, profile) => {
     if (profile) {
       self.userProfile = profile;
+      console.log(profile);
     }
     cb(err, profile);
   });
@@ -101,7 +102,7 @@ public getApiToken() {
     client_secret: '7j78m-tlu5ZfccjTivNptjb9yVsAz6Cxg6cdHdcA5HrFziWgxXHAjnpItn0WI5Ct',
     audience: 'https://apostle.auth0.com/api/v2/',
     grant_type: 'client_credentials',
-    scope: 'read:users'
+    scope: 'read:users update:users'
   }
   // var response;
   return this.http.post('https://apostle.auth0.com/oauth/token', body);
@@ -115,7 +116,7 @@ public updateUser(id) {
   var apiToken = this.mainService.getApiToken();
   var headers = new HttpHeaders().set('authorization','Bearer '+apiToken);
   var body = {
-     "email_verified": true
+     "name": 'Richard'
   }
   this.http.patch('https://apostle.auth0.com/api/v2/users/'+id,body,{headers: headers}).subscribe(
     // data => console.log(data)

@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): any {
     var lastVisitedRoute = JSON.parse(sessionStorage.getItem('lastVisitedRoute'));
+    this.router.navigate(['/home']);
     this.auth.handleAuthentication((err, profile) => {
         this.profile = profile;
 
@@ -25,13 +26,12 @@ export class AppComponent implements OnInit{
           data => {
             this.tokenDetails = data;
             this.mainAppService.setApiToken(this.tokenDetails)
-            this.auth.getUser(this.profile.sub||this.profile.user_id).subscribe(
-              data => {
-                      this.profile = data;
-                      this.mainAppService.setUserInfo(this.profile);
 
-                    }
-              )
+            this.mainAppService.setUserInfo(this.profile);
+            if(lastVisitedRoute.params)
+              this.router.navigate(['/'+lastVisitedRoute.url,lastVisitedRoute.params]);
+            else
+              this.router.navigate(['/'+lastVisitedRoute.url]);
             }
           )
         }

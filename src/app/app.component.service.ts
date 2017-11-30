@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MainAppService {
   profile:any;
-  APIToken:any;
+  private APIToken:any;
   setApiToken(token):any {
     this.APIToken = token.access_token;
   }

@@ -24,7 +24,7 @@ import { MainAppService } from './app.component.service';
   imports: [
     BrowserModule, RouterModule.forRoot(
       appRoutes, {enableTracing: true}
-    ), HttpClientModule,FormsModule, ReactiveFormsModule, RatingModule
+    ), HttpClientModule, FormsModule, ReactiveFormsModule, RatingModule
   ],
   providers: [ HomeComponentService, BookDetailsService, AuthService, MainAppService ],
   bootstrap: [AppComponent]

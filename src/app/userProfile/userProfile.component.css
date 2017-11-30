@@ -1,0 +1,9 @@
+/*.thumbnail {
+    width: 80%;
+}*/
+
+.displayPicture {
+    padding: 4px;
+    border: 1px solid #ddd;
+    height: 180px;
+}
