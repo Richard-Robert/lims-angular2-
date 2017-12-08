@@ -41,7 +41,7 @@
             <div class="reviewClass" *ngFor="let comment of bookDetails.comments">
                 <div class="row marg0">
                     <div>
-                        <rating [(ngModel)]="comment.rating" [readonly]="true" class="redStar"></rating> &nbsp;- &nbsp; By <span class="navyBlue italics bold"> {{comment.name}}</span> on <span class="italics">{{comment.date}}</span>
+                        <rating [(ngModel)]="comment.rating" [readonly]="true" class="redStar"></rating> &nbsp;- &nbsp; By <span class="navyBlue italics bold"> {{comment.name}}</span> on <span class="italics">{{comment.date|date}}</span>
                     </div>
                     <h4 class="col-xs-12 pad0 bold margTop0">{{comment.title}}</h4>
                 </div>

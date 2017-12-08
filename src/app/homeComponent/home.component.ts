@@ -10,6 +10,10 @@ import { HomeComponentService } from './home.component.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   // title= 'The Tethered Mage';
+route = {
+  url:'home',
+  params: null
+}
 bookData: any = {
   bookList: []
 };
@@ -17,6 +21,7 @@ constructor(private router: Router , private _homeComponentService: HomeComponen
 
 }
 ngOnInit(): any {
+  sessionStorage.setItem('lastVisitedRoute',JSON.stringify(this.route));
   this._homeComponentService.getBookList()
   .subscribe(
     data => {this.bookData = data; },

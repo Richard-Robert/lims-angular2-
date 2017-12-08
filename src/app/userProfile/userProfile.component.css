@@ -1,9 +1,13 @@
-/*.thumbnail {
-    width: 80%;
-}*/
-
 .displayPicture {
     padding: 4px;
     border: 1px solid #ddd;
     height: 180px;
+}
+
+.userDetails {
+    padding: 20px;
+}
+
+.width70 {
+    width: 70%;
 }

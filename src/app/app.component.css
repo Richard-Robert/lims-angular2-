@@ -94,6 +94,12 @@ span.navbar-brand:focus {
     outline-color: none;
 }
 
+.headerText {
+    color: #9d9d9d;
+    padding: 10px 10px;
+    display: block;
+}
+
 .displayPicture {
     height: 55px;
     width: 70px;

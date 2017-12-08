@@ -23,6 +23,10 @@ body {
     margin-bottom: 0px;
 }
 
+.margTop7 {
+    margin-top: 7px;
+}
+
 .centerAlign {
     text-align: center;
 }
@@ -33,6 +37,10 @@ body {
 
 .italics {
     font-style: italic;
+}
+
+.white {
+    color: white;
 }
 
 .red {
@@ -59,8 +67,15 @@ body {
 
 .solidGreyHr {
     background-color: grey;
+    float: none;
+    width: 100%;
+    padding: 0px;
 }
 
 .cursorPointer {
     cursor: pointer;
+}
+
+.form-control {
+    width: auto
 }

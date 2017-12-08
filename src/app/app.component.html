@@ -26,6 +26,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="cursorPointer" *ngIf="!auth.isAuthenticated()" (click)="auth.login()"><span class="glyphicon glyphicon-log-in"></span> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><span *ngIf="profile && auth.isAuthenticated()" class="headerText"><span class="white">Hello ,</span> <br /> {{profile.nickname|uppercase}}</span>
+                </li>
                 <li><img *ngIf="profile && auth.isAuthenticated()" class="img-circle displayPicture" src={{profile.picture}} alt="DP"></li>
                 <li><a class="cursorPointer" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 

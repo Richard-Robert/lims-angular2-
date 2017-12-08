@@ -69,6 +69,7 @@ userProfile: any;
     localStorage.removeItem('expires_at');
     localStorage.removeItem('user_profile');
 
+    sessionStorage.removeItem('lastVisitedRoute');
     // Go back to the home route
     this.router.navigate(['/']);
   }
@@ -93,6 +94,7 @@ public getProfile(cb): void {
       self.userProfile = profile;
       console.log(profile);
     }
+    console.log(profile);
     cb(err, profile);
   });
 }
@@ -102,7 +104,7 @@ public getApiToken() {
     client_secret: '7j78m-tlu5ZfccjTivNptjb9yVsAz6Cxg6cdHdcA5HrFziWgxXHAjnpItn0WI5Ct',
     audience: 'https://apostle.auth0.com/api/v2/',
     grant_type: 'client_credentials',
-    scope: 'read:users update:users'
+    scope: 'read:users read:user_idp_tokens update:users'
   }
   // var response;
   return this.http.post('https://apostle.auth0.com/oauth/token', body);
@@ -112,14 +114,19 @@ public getUser(id) {
   var headers = new HttpHeaders().set('authorization','Bearer '+apiToken);
   return this.http.get('https://apostle.auth0.com/api/v2/users/'+id,{headers: headers});
 }
-public updateUser(id) {
+public updateUser(id, body) {
   var apiToken = this.mainService.getApiToken();
   var headers = new HttpHeaders().set('authorization','Bearer '+apiToken);
-  var body = {
-     "name": 'Richard'
-  }
-  this.http.patch('https://apostle.auth0.com/api/v2/users/'+id,body,{headers: headers}).subscribe(
-    // data => console.log(data)
-  );
+  // var body = {
+  //   //  "username": "Richard_Robert",
+  //   // "email_verified": true,
+  //   "user_metadata" :{
+  //     "first_name" : "Richard"
+  //   },
+  //   // "email":"richard28.2008@gmail.com",
+  //   // "verify_email":true,
+  //   "connection": "Username-Password-Authentication",
+  // }
+  return this.http.patch('https://apostle.auth0.com/api/v2/users/'+id,body,{headers: headers});
 }
 }
