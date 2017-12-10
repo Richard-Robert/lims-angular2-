@@ -4,6 +4,7 @@ import { NgModel, NgForm, FormGroup, FormControl, FormBuilder, Validators } from
 
 import { BookDetailsService } from './../bookDetailsComponent/bookDetailsComponent.service';
 import { MainAppService } from './../app.component.service';
+import { AuthService } from './../auth/auth.service';
 
 @Component({
   selector: 'app-book-details',
@@ -21,7 +22,7 @@ sub: any;
 // starValue: number;
 profile:any;
 reviewForm: FormGroup;
-constructor(private activatedRoute: ActivatedRoute ,private mainAppService: MainAppService, private _bookDetailsService: BookDetailsService, private _formBuidler: FormBuilder) {
+constructor(private activatedRoute: ActivatedRoute ,public auth: AuthService, private mainAppService: MainAppService, private _bookDetailsService: BookDetailsService, private _formBuidler: FormBuilder) {
 
 }
 getBookDetails() {
@@ -54,9 +55,12 @@ ngOnDestroy () {
 //   console.log(this.starValue);
 // }
 validateReviewForm() {
-this.reviewForm.controls['date'].setValue(new Date());
-this._bookDetailsService.insertReview(this.reviewForm.value);
-this.getBookDetails();
-this.reviewForm.reset();
+  if(this.auth.isAuthenticated()){
+    this.reviewForm.controls['date'].setValue(new Date());
+    this._bookDetailsService.insertReview(this.reviewForm.value);
+    this.getBookDetails();
+    this.reviewForm.reset();
+  }
+  else alert("You need to be logged in to leave a review");
 }
 }

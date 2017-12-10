@@ -46,6 +46,7 @@ bookIndex: number;
   }
 
   insertReview(value) {
+    
     this.books.bookList[this.bookIndex].comments.push(value);
     sessionStorage.setItem('booksData', JSON.stringify(this.books));
     // let newReview= JSON.stringify(this.books);
