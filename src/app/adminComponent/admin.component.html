@@ -1,0 +1,124 @@
+<div class="childComponent">
+    <h2>Admin Page</h2>
+    <button class="btn btn-primary" (click)="openAddForm()">Add Book</button>
+    <form [formGroup]="addForm" class="container" *ngIf="showAddForm" (ngSubmit)="validateAddForm()">
+        <div class="formDiv">
+            <h3>Add Book Form</h3>
+            <div class="row innerFormDiv">
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>ISBN : </label><input type="number" class="form-control" placeholder="Enter book ISBN(10 or 13 digit)" [formControl]="addForm.controls['ISBN']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Title : </label><input class="form-control" placeholder="Enter book title" [formControl]="addForm.controls['title']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Author : </label><input class="form-control" placeholder="Author's name" [formControl]="addForm.controls['author']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Image source : </label><input class="form-control" placeholder="url to the image source" [formControl]="addForm.controls['imgSrc']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Published Date : </label><input class="form-control" placeholder="Date the book was published" [formControl]="addForm.controls['published']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Number of copies : </label><input type="number" placeholder="Total Number of copies" class="form-control" [formControl]="addForm.controls['totalQty']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+                <div class="col-md-6">
+                    <label>Book Rating (optional) : </label><input type="number" class="form-control" placeholder="Rating out of 5" [formControl]="addForm.controls['totalRating']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Genres : </label><input class="form-control" placeholder="Separate the different genres by comma" [formControl]="addForm.controls['genres']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+                <div class="col-md-12">
+                    <span class="red bold">* </span><label>Short Summary : </label><textarea class="form-control" placeholder="Short Summary" [formControl]="addForm.controls['shortSummary']" rows="" cols=""></textarea>
+                </div>
+                <div class="col-md-12">
+                    <span class="red bold">* </span><label>Prologue : </label><textarea class="form-control" placeholder="Detailed description" [formControl]="addForm.controls['prologue']" rows="" cols=""></textarea>
+                </div>
+            </div>
+            <span class="italics"><span class="red">* </span> Indicates required field</span>
+            <div class="row">
+                <button class="btn btn-danger col-md-push-5 col-md-1" (click)="cancelAddForm()">Cancel</button>
+                <button type="submit" class="btn btn-success col-md-push-5 col-md-1" [disabled]="addForm.invalid">ADD</button>
+            </div>
+        </div>
+    </form>
+    <!-- -------------------Edit Form-------------------------- -->
+    <form [formGroup]="editForm" class="container" *ngIf="showEditForm" (ngSubmit)="validateEditForm()">
+        <div class="formDiv">
+            <h3>Edit Book Form</h3>
+            <div class="row innerFormDiv">
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>ISBN : </label><input type="number" class="form-control" placeholder="Enter book ISBN(10 or 13 digit)" [formControl]="editForm.controls['ISBN']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Title : </label><input class="form-control" placeholder="Enter book title" [formControl]="editForm.controls['title']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Author : </label><input class="form-control" placeholder="Author's name" [formControl]="editForm.controls['author']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Image source : </label><input class="form-control" placeholder="url to the image source" [formControl]="editForm.controls['imgSrc']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Total Number of copies : </label><input type="number" placeholder="Total Number of copies" class="form-control" [formControl]="editForm.controls['totalQty']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Available Number of copies : </label><input type="number" placeholder="Available Number of copies" class="form-control" [formControl]="editForm.controls['qtyAvailable']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Genres : </label><input class="form-control" placeholder="Separate the different genres by comma" [formControl]="editForm.controls['genres']">
+                </div>
+                <div class="col-md-6">
+                    <span class="red bold">* </span><label>Published Date : </label><input class="form-control" placeholder="Date the book was published" [formControl]="editForm.controls['published']">
+                </div>
+            </div>
+            <div class="row innerFormDiv">
+                <div class="col-md-12">
+                    <span class="red bold">* </span><label>Short Summary : </label><textarea class="form-control" placeholder="Short Summary" [formControl]="editForm.controls['shortSummary']" rows="" cols=""></textarea>
+                </div>
+                <div class="col-md-12">
+                    <span class="red bold">* </span><label>Prologue : </label><textarea class="form-control" placeholder="Detailed description" [formControl]="editForm.controls['prologue']" rows="" cols=""></textarea>
+                </div>
+            </div>
+            <span class="italics"><span class="red">* </span> Indicates required field</span>
+            <div class="row">
+                <button class="btn btn-danger col-md-push-5 col-md-1" (click)="cancelEditForm()">Cancel</button>
+                <button type="submit" class="btn btn-success col-md-push-5 col-md-1" [disabled]="editForm.invalid">Save</button>
+            </div>
+        </div>
+    </form>
+    <!-- --------------------------End of Edit Form------------------------------------ -->
+    <table class="table" *ngIf="!showEditForm">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of bookData.bookList">
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td><button type="" class="btn btn-primary" (click)="openEditForm(book.ISBN)">Edit</button><button type="" class="btn btn-danger" (click)="deleteBook(book.ISBN)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

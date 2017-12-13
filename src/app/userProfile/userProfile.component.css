@@ -8,6 +8,10 @@
     padding: 20px;
 }
 
+.form-control {
+    width: auto
+}
+
 .width70 {
     width: 70%;
 }

@@ -6,7 +6,7 @@ export class Book {
     public imgSrc: string,
     public shortSummary: string,
     public ISBN: number,
-    public Published: string,
+    public published: string,
     public qtyAvailable: number,
     public totalQty: number,
     public totalRating: number,

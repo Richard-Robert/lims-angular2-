@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   title = 'app';
   profile: any;
   tokenDetails: any;
+  isAdmin:boolean;
   constructor(public auth: AuthService, private router: Router, private mainAppService: MainAppService) {  }
 
   ngOnInit(): any {
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit{
         this.profile = profile;
 
         if(this.profile) {
+        this.isAdmin = this.profile['https://Lims/isAdmin'];
         this.auth.getApiToken().subscribe(
           data => {
             this.tokenDetails = data;

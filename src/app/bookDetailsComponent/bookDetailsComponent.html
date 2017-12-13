@@ -17,50 +17,55 @@
                     <label for="test">Author : </label><span id="test" class="darkerRed italics bold"> {{bookDetails.author}}</span>
                 </div>
                 <div>
-                    <label for="test">Published : </label><span id="test" class="darkerRed bold"> {{bookDetails.published}}</span>
+                    <label *ngIf="bookDetails.published" for="test">Published : </label><span id="test" class="darkerRed bold"> {{bookDetails.published}}</span>
                 </div>
-
+                <div class="row">
+                    <button class="btn btn-warning col-xs-3" *ngIf="" (click)="issueBook()">Issue</button>
+                    <button class="btn btn-danger col-xs-3" *ngIf="">Return</button>
+                    <button class=" btn btn-success col-xs-3" *ngIf="">Renew</button>
+                </div>
             </div>
-            <div class="BookListSecondDiv col-md-8">
-                <h4 [innerHTML]="bookDetails.title|uppercase" class="marg0"></h4>
-                <!--<h5 class="bold col-xs-2 pad0">Genre : </h5>-->
+            <div class="BookListSecondDiv col-md-8 ">
+                <h4 [innerHTML]="bookDetails.title|uppercase " class="marg0 "></h4>
+                <!--<h5 class="bold col-xs-2 pad0 ">Genre : </h5>-->
                 <h5>
-                    <span class="pad0 red italics" *ngFor="let genre of bookDetails.genres;let ndx=index">{{genre}} <span *ngIf="ndx < bookDetails.genres.length-1">/</span> </span>
+                    <span class="pad0 red italics " *ngFor="let genre of bookDetails.genres;let ndx=index ">{{genre}} <span *ngIf="ndx < bookDetails.genres.length-1 ">/</span> </span>
                 </h5>
-                <!--<h5 class="bold">Summary :</h5>-->
-                <hr class="col-xs-12 solidBlackHr" />
+                <!--<h5 class="bold ">Summary :</h5>-->
+                <hr class="col-xs-12 solidBlackHr " />
                 <p>{{bookDetails.prologue}}
 
                 </p>
             </div>
         </div>
-        <hr class="solidGreyHr col-xs-12" />
-        <div class="reviewSection">
-            <h2 class="">Ratings & Reviews :</h2>
+        <hr class="solidGreyHr col-xs-12 " />
+        <div class="reviewSection ">
+            <h2 class=" ">Ratings & Reviews :</h2>
 
-            <div class="reviewClass" *ngFor="let comment of bookDetails.comments">
-                <div class="row marg0">
+            <div class="reviewClass " *ngFor="let comment of bookDetails.comments ">
+                <div class="row marg0 ">
                     <div>
-                        <rating [(ngModel)]="comment.rating" [readonly]="true" class="redStar"></rating> &nbsp;- &nbsp; By <span class="navyBlue italics bold"> {{comment.name}}</span> on <span class="italics">{{comment.date|date}}</span>
+                        <rating [(ngModel)]="comment.rating " [readonly]="true " class="redStar "></rating> &nbsp;- &nbsp; By <span class="navyBlue italics bold "> {{comment.name}}</span> on <span class="italics ">{{comment.date|date}}</span>
                     </div>
-                    <h4 class="col-xs-12 pad0 bold margTop0">{{comment.title}}</h4>
+                    <h4 class="col-xs-12 pad0 bold margTop0 ">{{comment.title}}</h4>
                 </div>
-                <div class="row marg0">
+                <div class="row marg0 ">
                     {{comment.content}}
                 </div>
             </div>
         </div>
-        <!--<rating [(ngModel)]="starValue" [max]=5 (click)="test()" [float]="true" class="redStar"></rating>-->
-        <hr class="solidGreyHr col-xs-12" /><br />
-        <div class="commentsSection row">
+        <!--<rating [(ngModel)]="starValue " [max]=5 (click)="test() " [float]="true " class="redStar "></rating>-->
+        <hr class="solidGreyHr col-xs-12 " /><br />
+        <div class="commentsSection row ">
             <h2>Write a Review</h2>
-            <form [formGroup]="reviewForm" (ngSubmit)="validateReviewForm()">
-                <div class="ratingStars row">
-                    <rating [(ngModel)]="starValue" [formControl]="reviewForm.controls['rating']" [max]=5 (click)="test()" [float]="true" class="redStar col-md-offset-3 col-xs-offset-1" [titles]="['Poor','Average','Good','Very Good','Excellent']"></rating>
+            <form [formGroup]="reviewForm " (ngSubmit)="validateReviewForm() ">
+                <div class="ratingStars row ">
+                    <rating [(ngModel)]="starValue " [formControl]="reviewForm.controls[ 'rating'] " [max]=5 (click)="test() " [float]="true " class="redStar col-md-offset-3 col-xs-offset-1 " [titles]="[ 'Poor', 'Average', 'Good', 'Very Good',
+                        'Excellent'] "></rating>
                 </div>
-                <div class="col-md-push-2 col-md-8">
-                    <textarea placeholder="Enter review here" [formControl]="reviewForm.controls['content']" rows="5" cols="100" class="form-control"></textarea>
-                    <button type="submit" class="btn btn-success col-xs-push-10 col-xs-2 reviewBtn" [disabled]="reviewForm.invalid">Submit</button>
+                <div class="col-md-push-2 col-md-8 ">
+                    <textarea placeholder="Enter review here " [formControl]="reviewForm.controls[ 'content'] " rows="5 " cols="100 " class="form-control "></textarea>
+                    <button type="submit " class="btn btn-success col-xs-push-10 col-xs-2 reviewBtn " [disabled]="reviewForm.invalid ">Submit</button>
                 </div>
             </form>
 

@@ -3,6 +3,7 @@ body {
 }
 
 .childComponent {
+    min-height: 65vh;
     height: auto;
     background-color: rgba(255, 255, 255, 0.8);
 }
@@ -72,10 +73,13 @@ body {
     padding: 0px;
 }
 
-.cursorPointer {
-    cursor: pointer;
+.thickWhiteHr {
+    background-color: white;
+    float: none;
+    width: 100%;
+    padding: 0px;
 }
 
-.form-control {
-    width: auto
+.cursorPointer {
+    cursor: pointer;
 }

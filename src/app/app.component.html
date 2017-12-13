@@ -13,12 +13,13 @@
         <div class="collapse navbar-collapse" id="menuToggleBtn">
             <ul class="nav navbar-nav" data-toggle="tab">
                 <li class="active"><a [routerLink]="['home']">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" >Admin</a></li>
-                <li><a *ngIf="profile && auth.isAuthenticated()" [routerLink]="['profile']">Profile</a></li>
+                <li><a *ngIf="auth.isAuthenticated() && profile" [routerLink]="['profile']">Profile</a></li>
+                <li><a *ngIf="auth.isAuthenticated() && isAdmin" [routerLink]="['admin']">Admin</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="cursorPointer" *ngIf="!auth.isAuthenticated()" (click)="auth.login()"><span class="glyphicon glyphicon-log-in"></span> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><span *ngIf="profile && auth.isAuthenticated()" class="headerText"><span class="white">Hello ,</span> <br /> {{profile.nickname|uppercase}}</span></li>
+                <li><span *ngIf="profile && auth.isAuthenticated()" class="headerText"><span class="white">Hello ,</span> <br /> {{profile.nickname|uppercase}}</span>
+                </li>
                 <li><img *ngIf="profile && auth.isAuthenticated()" class="img-circle displayPicture" src={{profile.picture}} alt="DP"></li>
                 <li><a class="cursorPointer" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>

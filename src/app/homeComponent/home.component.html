@@ -1,10 +1,14 @@
 <div class="childComponent">
     <h2>Home</h2>
+    <div class="container-fluid row searchBox">
+        <span class="col-xs-push-8 col-xs-3"><span class="col-xs-3 bold">Search : </span> <input [(ngModel)]="searchText" class="form-control" placeholder="search by title / author"></span>
+    </div>
+
     <div class="bookListHomeScreen container">
-        <div class="row" *ngFor="let book of bookData.bookList">
+        <div class="row" *ngFor="let book of bookData.bookList | filter : searchText">
             <div class="BookListFirstDiv col-md-4">
                 <div class="thumbnail pad0">
-                    <img src={{book.imgSrc}} alt="The Tethered Mage" class="thumbnail">
+                    <img src={{book.imgSrc}} alt="Was unable to load image" class="thumbnail">
                 </div>
                 <div>
                     <span class="col-xs-12 bold"> Rating :<rating [(ngModel)]="book.totalRating" [readonly]="true" class="redStar"></rating></span>
@@ -25,5 +29,8 @@
             </div>
             <hr class="solidGreyHr col-xs-12" />
         </div>
+    </div>
+    <div *ngIf="bookData.bookList.length===0" class="row">
+        <h3 class="col-xs-push-4 col-xs-4">No Results Found</h3>
     </div>
 </div>

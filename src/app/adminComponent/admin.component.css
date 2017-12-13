@@ -1,0 +1,17 @@
+.table {
+    text-align: center;
+}
+
+.table th {
+    text-align: center;
+}
+
+.formDiv {
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.innerFormDiv {
+    margin-bottom: 10px;
+}

@@ -22,6 +22,8 @@ sub: any;
 // starValue: number;
 profile:any;
 reviewForm: FormGroup;
+issuedFlag:boolean = false;
+returnDate:Date;
 constructor(private activatedRoute: ActivatedRoute ,public auth: AuthService, private mainAppService: MainAppService, private _bookDetailsService: BookDetailsService, private _formBuidler: FormBuilder) {
 
 }
@@ -41,6 +43,22 @@ this.sub = this.activatedRoute.params.subscribe(params => {
        // In a real app: dispatch action to load the details here.
     });
 this.profile = this.mainAppService.getProfile();
+this.auth.getUser(this.profile.sub).subscribe(
+              data => {
+                      this.profile = data;
+                      if(this.profile.user_metadata && this.profile.user_metadata.booksIssued)
+                        {
+                          for(let book of  this.profile.user_metadata.booksIssued)
+                            {
+                              if(book.ISBN == this.bookDetails.ISBN)
+                                  {
+                                    this.issuedFlag = true;
+                                    this.returnDate = book.returnDate;
+                                  }
+                            }
+                        }
+                      }
+              );
 this.reviewForm = this._formBuidler.group({
   'name':this.profile.nickname,
   'date': [null],
@@ -62,5 +80,30 @@ validateReviewForm() {
     this.reviewForm.reset();
   }
   else alert("You need to be logged in to leave a review");
+}
+issueBook():any {
+  var returnDate = new Date();
+  returnDate.setDate(returnDate.getDate() + 7);
+  var body = {
+          connection:"Username-Password-Authentication",
+          user_metadata:{
+            booksIssued:[
+              {
+                isbn:this.bookDetails.ISBN,
+                returnDate: returnDate
+              }
+            ]
+          }
+  };
+  this.auth.updateUser(this.profile.user_id, body).subscribe(
+        data => {
+          this.auth.getUser(this.profile.user_id).subscribe(
+              data => {
+                      this.profile = data;
+                    }
+              );
+            },
+        err => {alert(err.error.message);}
+      );
 }
 }

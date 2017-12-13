@@ -17,17 +17,24 @@ route = {
 bookData: any = {
   bookList: []
 };
+searchText:string;
 constructor(private router: Router , private _homeComponentService: HomeComponentService) {
 
 }
 ngOnInit(): any {
   sessionStorage.setItem('lastVisitedRoute',JSON.stringify(this.route));
-  this._homeComponentService.getBookList()
-  .subscribe(
-    data => {this.bookData = data; },
-    err => alert(err.statusText),
-    () => console.log('finish')
-  );
+  if(!localStorage['booksData'])
+      this._homeComponentService.getBookList()
+        .subscribe(
+          data => {
+              this.bookData = data;
+              localStorage.setItem('booksData', JSON.stringify(this.bookData)); },
+          err => alert(err.statusText),
+          () => console.log('finish')
+        );
+  else {
+    this.bookData = JSON.parse(localStorage.getItem('booksData'));
+  }
 }
 ngOnDestroy(): any {
 
