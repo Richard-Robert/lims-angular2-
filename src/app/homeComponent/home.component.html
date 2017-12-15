@@ -1,13 +1,13 @@
 <div class="childComponent">
     <h2>Home</h2>
     <div class="container-fluid row searchBox">
-        <span class="col-xs-push-8 col-xs-3"><span class="col-xs-3 bold">Search : </span> <input [(ngModel)]="searchText" class="form-control" placeholder="search by title / author"></span>
+        <span class="col-sm-push-8 col-xs-push-1 col-md-4 col-sm-4 col-xs-10"><span class="col-md-4 col-sm-6 bold">Search : </span> <input [(ngModel)]="searchText" class="form-control" placeholder="search by title / author"></span>
     </div>
 
     <div class="bookListHomeScreen container">
         <div class="row" *ngFor="let book of bookData.bookList | filter : searchText">
             <div class="BookListFirstDiv col-md-4">
-                <div class="thumbnail pad0">
+                <div class="thumbnail pad0 cursorPointer" (click)="bookDetailsNavigate(book.ISBN)">
                     <img src={{book.imgSrc}} alt="Was unable to load image" class="thumbnail">
                 </div>
                 <div>
@@ -16,14 +16,14 @@
                 </div>
             </div>
             <div class="BookListSecondDiv col-md-8">
-                <h4 [innerHTML]="book.title|uppercase" class="marg0"></h4>
+                <h4 [innerHTML]="book.title|uppercase" class="marg0 cursorPointer" (click)="bookDetailsNavigate(book.ISBN)"></h4>
                 <!--<h5 class="bold col-xs-2 pad0">Genre : </h5>-->
                 <h5>
                     <span class="pad0 red italics" *ngFor="let genre of book.genres;let ndx=index">{{genre}} <span *ngIf="ndx < book.genres.length-1">/</span> </span>
                 </h5>
                 <!--<h5 class="bold">Summary :</h5>-->
                 <hr class="col-xs-12 solidBlackHr" />
-                <p>{{book.shortSummary}}
+                <p>{{book.shortSummary}}..
                     <span class="readMoreTag" (click)="bookDetailsNavigate(book.ISBN)">Read More...</span>
                 </p>
             </div>

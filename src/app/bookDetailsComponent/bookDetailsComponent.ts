@@ -22,7 +22,7 @@ sub: any;
 // starValue: number;
 profile:any;
 reviewForm: FormGroup;
-issuedFlag:boolean = false;
+issuedFlag:boolean;
 returnDate:Date;
 constructor(private activatedRoute: ActivatedRoute ,public auth: AuthService, private mainAppService: MainAppService, private _bookDetailsService: BookDetailsService, private _formBuidler: FormBuilder) {
 
@@ -35,6 +35,7 @@ getBookDetails() {
         );
 }
 ngOnInit() {
+this.issuedFlag = false;
 this.sub = this.activatedRoute.params.subscribe(params => {
        this.isbn = +params['isbn']; // (+) converts string 'id' to a number
        this.route.params = this.isbn;
@@ -50,7 +51,7 @@ this.auth.getUser(this.profile.sub).subscribe(
                         {
                           for(let book of  this.profile.user_metadata.booksIssued)
                             {
-                              if(book.ISBN == this.bookDetails.ISBN)
+                              if(book.isbn == this.bookDetails.ISBN)
                                   {
                                     this.issuedFlag = true;
                                     this.returnDate = book.returnDate;
@@ -84,26 +85,108 @@ validateReviewForm() {
 issueBook():any {
   var returnDate = new Date();
   returnDate.setDate(returnDate.getDate() + 7);
-  var body = {
-          connection:"Username-Password-Authentication",
-          user_metadata:{
-            booksIssued:[
-              {
-                isbn:this.bookDetails.ISBN,
-                returnDate: returnDate
+  //If the user already has books issued
+  var body = {};
+  if(this.profile.user_metadata && this.profile.user_metadata.booksIssued)
+  {
+    var tempbooksIssued = this.profile.user_metadata.booksIssued;
+    tempbooksIssued.push({isbn:this.bookDetails.ISBN,returnDate: returnDate});
+    body = {
+              connection:"Username-Password-Authentication",
+              user_metadata:{
+                booksIssued:tempbooksIssued
               }
-            ]
-          }
-  };
+      };
+  }
+
+  //If this is the first book the user is going to issue
+  else  {
+        body = {
+              connection:"Username-Password-Authentication",
+              user_metadata:{
+                booksIssued:[
+                  {
+                    isbn:this.bookDetails.ISBN,
+                    returnDate: returnDate
+                  }
+                ]
+              }
+      };
+  }
+
   this.auth.updateUser(this.profile.user_id, body).subscribe(
         data => {
-          this.auth.getUser(this.profile.user_id).subscribe(
-              data => {
-                      this.profile = data;
-                    }
-              );
+            this.bookDetails.qtyAvailable--;
+            this._bookDetailsService.updateQty(this.bookDetails.qtyAvailable);
+            this.ngOnInit();
             },
-        err => {alert(err.error.message);}
+        err => {
+            alert(err.error.message);
+            }
       );
 }
+
+returnBook():any {
+
+var body = {} , index;
+var tempbooksIssued = this.profile.user_metadata.booksIssued;
+for(let book of  tempbooksIssued)
+          {
+            if(book.isbn == this.bookDetails.ISBN)
+                    {
+                      index = tempbooksIssued.indexOf(book);
+                      this.profile.user_metadata.booksIssued.splice(index,1);
+                      break;
+                    }
+          };
+
+body = {
+         connection:"Username-Password-Authentication",
+         user_metadata:{
+                booksIssued:this.profile.user_metadata.booksIssued
+              }
+      };
+
+this.auth.updateUser(this.profile.user_id, body).subscribe(
+        data => {
+            this.bookDetails.qtyAvailable++;
+            this._bookDetailsService.updateQty(this.bookDetails.qtyAvailable);
+            this.ngOnInit();
+            },
+        err => {
+            alert(err.error.message);
+            }
+      );
+};
+
+renewBook():any {
+  var body = {};
+  var returnDate = new Date();
+  returnDate.setDate(returnDate.getDate() + 7);
+  var tempbooksIssued = this.profile.user_metadata.booksIssued;
+  for(let book of  tempbooksIssued)
+      {
+        if(book.isbn == this.bookDetails.ISBN)
+            {
+              // index = tempbooksIssued.indexOf(book);
+              // this.profile.user_metadata.booksIssued.splice(index,1);
+              book.returnDate = returnDate;
+              break;
+            }
+          };
+  body = {
+         connection:"Username-Password-Authentication",
+         user_metadata:{
+                booksIssued:tempbooksIssued
+              }
+      };
+  this.auth.updateUser(this.profile.user_id, body).subscribe(
+        data => {
+            this.ngOnInit();
+            },
+        err => {
+            alert(err.error.message);
+            }
+      );
+};
 }

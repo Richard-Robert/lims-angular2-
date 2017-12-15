@@ -1,45 +1,214 @@
 {
     "bookList": [{
-        "title": "THE TETHERED MAGE",
-        "genres": ["Science Fiction", "Fantasy"],
-        "author": "Melissa Caruso",
-        "imgSrc": "/assets/images/books/The_Tethered_Mage.jpg",
-        "shortSummary": "At first glance, it would be easy to write off The Tethered Mage as another coming-of-age novel with an interesting magic system. To do so would mean missing a breathtaking book. Equal parts fantasy and political intrigue, The Tethered Mage pulls readers relentlessly through labyrinthine turns of conspiracy, adventure and romance....",
-        "ISBN": 9780316466875,
-        "published": "10/24/2017",
-        "qtyAvailable": 5,
-        "totalQty": 5,
-        "totalRating": 4.5,
-        "prologue": "At first glance, it would be easy to write off The Tethered Mage as another coming-of-age novel with an interesting magic system. To do so would mean missing a breathtaking book. Equal parts fantasy and political intrigue, The Tethered Mage pulls readers relentlessly through labyrinthine turns of conspiracy, adventure and romance.\n\nThe Raverran Empire’s complete control over magic users has allowed it to expand through threat of violence. Warlocks, referred to as Falcons, are controlled by conscription into the Raverran army at a young age. Falconers have complete control over when Falcons can use their powers, which are only unleashed for the good of the Empire. But the balance of power within Raverra is a tenuous one. When Amalia Cornaro, heir to one of the most powerful houses in the realm, captures a powerful fire warlock who threatens to burn the city of Raverra, she endangers that balance.Amalia is pulled into the life of a Falconer, a role previously forbidden to her because of her noble blood. Her Falcon, the street-hardened Zaira, has avoided conscription long enough to recognize that “the good of the Empire” and her own interests do not necessarily overlap. As Zaira and Amalia come to terms with their new relationship, they are pulled into a conspiracy that puts the Empire—and everyone they love—in danger.\nWhile most of her characters are young adults, Caruso avoids some of the pitfalls of writing about that age group. Her characters are nuanced and thoughtful, driven by duty to country and family. That isn’t to say that Caruso neglects relationships within her novel. Rather, she doesn’t limit herself to romance or allow it to absorb Amalia or Zaira, and it’s refreshing to have those entanglements take a back seat in service of the plot. Instead, Caruso’s characters’ non-romantic relationships drive the action, pulling each away from duty and forcing them to make difficult decisions.\nAlthough the political machinations surrounding the young women are complex, the story never drags. Instead, it sends the reader digging into each sentence to find the key that will make the conspiracy surrounding Amalia and Zaira’s adventure fall into place. This first entry into the Swords and Fire trilogy is worth every moment and every page, and it should make anyone paying attention excited about what Caruso will write next.",
-        "comments": [{
-                "name": "Helen Wawrejko",
-                "date": "2017-10-25T00:00:00.000Z",
-                "title": "A thrilling page turner",
-                "rating": 5,
-                "content": "Zaira has reached adulthood without notice of her magic that is regulated. Amalia, rich, ruling class, slumming to purchase a book unnoticed, stumbles upon Zaira being attacked. This meeting forever changes both their lives. Superb epic \"medieval\" fantasy that rivals Sarah Maas\\' novels. Rarely is there a book where \"I did not see that coming\" is my quote. Full of mystery and suspense, political machinations to the nth degree, exceptional characters, great dialog and worldbuilding. A thrilling page turner. I voluntarily reviewed an ARC from Netgalley."
-            },
-            {
-                "name": "Lois Dyer",
-                "date": "2017-10-24T00:00:00.000Z",
-                "title": "Pleasure reading it",
-                "rating": 4.5,
-                "content": "I had the pleasure of reading an early copy of this book and loved it - immediately became a fan of Ms. Caruso. I cannot wait for the next title in this absolutely riveting series."
-            },
-            {
-                "name": "Quickbeam",
-                "date": "2017-08-25T00:00:00.000Z",
-                "title": "Power, privilege, royalty and romance. An uneasy mix for me. Slow read",
-                "rating": 4.5,
-                "content": "I love magic and fantasy in my reading but not so much caste systems and trappings of royalty. For me there was far too much of the latter. The book has for me a very slave-like relationship, complete with shackles, between the magic born and their \"keeper\". I could not shake my distaste for the basic premise of that relationship which is central to the plot.\r\nI did like the intricacies of the story line which has a lot of intrigue and twist to it. There is a very strong romantic theme throughout, so much so that I would call this a fantasy romance more than science fiction. In the end the privilege of birth and the ( for me) creepy power dynamics kept me from being able to fully recommend this book."
-            },
-            {
-                "name": "R. Song",
-                "date": "2017-07-13T00:00:00.000Z",
-                "title": "Masterful & Intricate",
-                "rating": 4,
-                "content": "Honestly this almost reminded me of a dramatic recreation of Machiavelli's The Prince. The political intrigue is insane and well plotted out. The characters are relateable, especially the thief, Zaira (I love a sassy mouthed character).\nIn this fantasty magic appears in the eye and those who are gifted are taken to train, and eventually evaluated by Falconers with their Falcons, and then have their training bracelets taken off. And no, not a bird falcon, a person-you'll have to read for anything more because I'd spoil it.\nOf course peace is too boring for some types. Enter the Shadow Gentry-the rebel rousers. Amalia, daughter of one of the Falcon council, finds an unlikely friend in thief Zaira, and together they fight the Shadow Gentry.\nOk this sounds typical, but if you give the book a chance, you'll find the characters memorable, the world building intricate, and really the politics were my favorite bit. It's not often politics are so well detailed, so intricate and well woven into a story. This is certainly a great beginning to a YA series!"
-            }
+            "title": "THE TETHERED MAGE(Swords and Fire)",
+            "genres": ["Science Fiction", "Fantasy"],
+            "author": "Melissa Caruso",
+            "imgSrc": "/assets/images/books/The_Tethered_Mage.jpg",
+            "shortSummary": "At first glance, it would be easy to write off The Tethered Mage as another coming-of-age novel with an interesting magic system. To do so would mean missing a breathtaking book. Equal parts fantasy and political intrigue, The Tethered Mage pulls readers relentlessly through labyrinthine turns of conspiracy, adventure and romance....",
+            "ISBN": 9780316466875,
+            "published": "10/24/2017",
+            "qtyAvailable": 5,
+            "totalQty": 5,
+            "totalRating": 4.5,
+            "prologue": "At first glance, it would be easy to write off The Tethered Mage as another coming-of-age novel with an interesting magic system. To do so would mean missing a breathtaking book. Equal parts fantasy and political intrigue, The Tethered Mage pulls readers relentlessly through labyrinthine turns of conspiracy, adventure and romance.\n\nThe Raverran Empire’s complete control over magic users has allowed it to expand through threat of violence. Warlocks, referred to as Falcons, are controlled by conscription into the Raverran army at a young age. Falconers have complete control over when Falcons can use their powers, which are only unleashed for the good of the Empire. But the balance of power within Raverra is a tenuous one. When Amalia Cornaro, heir to one of the most powerful houses in the realm, captures a powerful fire warlock who threatens to burn the city of Raverra, she endangers that balance.Amalia is pulled into the life of a Falconer, a role previously forbidden to her because of her noble blood. Her Falcon, the street-hardened Zaira, has avoided conscription long enough to recognize that “the good of the Empire” and her own interests do not necessarily overlap. As Zaira and Amalia come to terms with their new relationship, they are pulled into a conspiracy that puts the Empire—and everyone they love—in danger.\nWhile most of her characters are young adults, Caruso avoids some of the pitfalls of writing about that age group. Her characters are nuanced and thoughtful, driven by duty to country and family. That isn’t to say that Caruso neglects relationships within her novel. Rather, she doesn’t limit herself to romance or allow it to absorb Amalia or Zaira, and it’s refreshing to have those entanglements take a back seat in service of the plot. Instead, Caruso’s characters’ non-romantic relationships drive the action, pulling each away from duty and forcing them to make difficult decisions.\nAlthough the political machinations surrounding the young women are complex, the story never drags. Instead, it sends the reader digging into each sentence to find the key that will make the conspiracy surrounding Amalia and Zaira’s adventure fall into place. This first entry into the Swords and Fire trilogy is worth every moment and every page, and it should make anyone paying attention excited about what Caruso will write next.",
+            "comments": [{
+                    "name": "Helen Wawrejko",
+                    "date": "2017-10-25T00:00:00.000Z",
+                    "title": "A thrilling page turner",
+                    "rating": 5,
+                    "content": "Zaira has reached adulthood without notice of her magic that is regulated. Amalia, rich, ruling class, slumming to purchase a book unnoticed, stumbles upon Zaira being attacked. This meeting forever changes both their lives. Superb epic \"medieval\" fantasy that rivals Sarah Maas\\' novels. Rarely is there a book where \"I did not see that coming\" is my quote. Full of mystery and suspense, political machinations to the nth degree, exceptional characters, great dialog and worldbuilding. A thrilling page turner. I voluntarily reviewed an ARC from Netgalley."
+                },
+                {
+                    "name": "Lois Dyer",
+                    "date": "2017-10-24T00:00:00.000Z",
+                    "title": "Pleasure reading it",
+                    "rating": 4.5,
+                    "content": "I had the pleasure of reading an early copy of this book and loved it - immediately became a fan of Ms. Caruso. I cannot wait for the next title in this absolutely riveting series."
+                },
+                {
+                    "name": "Quickbeam",
+                    "date": "2017-08-25T00:00:00.000Z",
+                    "title": "Power, privilege, royalty and romance. An uneasy mix for me. Slow read",
+                    "rating": 4.5,
+                    "content": "I love magic and fantasy in my reading but not so much caste systems and trappings of royalty. For me there was far too much of the latter. The book has for me a very slave-like relationship, complete with shackles, between the magic born and their \"keeper\". I could not shake my distaste for the basic premise of that relationship which is central to the plot.\r\nI did like the intricacies of the story line which has a lot of intrigue and twist to it. There is a very strong romantic theme throughout, so much so that I would call this a fantasy romance more than science fiction. In the end the privilege of birth and the ( for me) creepy power dynamics kept me from being able to fully recommend this book."
+                },
+                {
+                    "name": "R. Song",
+                    "date": "2017-07-13T00:00:00.000Z",
+                    "title": "Masterful & Intricate",
+                    "rating": 4,
+                    "content": "Honestly this almost reminded me of a dramatic recreation of Machiavelli's The Prince. The political intrigue is insane and well plotted out. The characters are relateable, especially the thief, Zaira (I love a sassy mouthed character).\nIn this fantasty magic appears in the eye and those who are gifted are taken to train, and eventually evaluated by Falconers with their Falcons, and then have their training bracelets taken off. And no, not a bird falcon, a person-you'll have to read for anything more because I'd spoil it.\nOf course peace is too boring for some types. Enter the Shadow Gentry-the rebel rousers. Amalia, daughter of one of the Falcon council, finds an unlikely friend in thief Zaira, and together they fight the Shadow Gentry.\nOk this sounds typical, but if you give the book a chance, you'll find the characters memorable, the world building intricate, and really the politics were my favorite bit. It's not often politics are so well detailed, so intricate and well woven into a story. This is certainly a great beginning to a YA series!"
+                }
 
-        ]
-    }]
+            ]
+        },
+        {
+            "title": "LETTERS FROM SKYE",
+            "genres": ["Historical Fiction", "Fantasy", "Debut Fiction"],
+            "author": "Jessica Brockmole",
+            "imgSrc": "/assets/images/books/Letters_from_skye.jpg",
+            "shortSummary": "What could be more divine than spending a summer day devouring the elegantly written WWI-era correspondence between a plucky Scottish heroine and an American ambulance driver risking his life on the frontlines? Jessica Brockmole’s debut novel, Letters from Skye, is a charming vintage love story about Elspeth, a lonely poet living on the remote Isle of Skye, and her American pen pal,..",
+            "ISBN": 9780345542601,
+            "published": "07/09/2013",
+            "qtyAvailable": 2,
+            "totalQty": 2,
+            "totalRating": 4.0,
+            "prologue": "What could be more divine than spending a summer day devouring the elegantly written WWI-era correspondence between a plucky Scottish heroine and an American ambulance driver risking his life on the frontlines?\n\nJessica Brockmole\u2019s debut novel, Letters from Skye, is a charming vintage love story about Elspeth, a lonely poet living on the remote Isle of Skye, and her American pen pal, Davey, a student at the University of Illinois. Elspeth and Davey are the quintessential star-crossed lovers, facing formidable obstacles as their friendship blossoms into a love affair. While epistolary novels are a popular storytelling style of late, Brockmole\u2019s use of this device is essential to her tale, allowing her to blend the voices of the enigmatic Elspeth and the irrepressible Davey.\n\nAvoiding a chronological narrative, the novel fast-forwards to World War II, when Elspeth\u2019s daughter, Margaret, discovers a box of old letters addressed to \u201CSue\u201D\u2014Davey\u2019s secret nickname for his Scottish lover. When Elspeth disappears, Margaret is compelled to unravel this riddle from her stoic mother\u2019s past.\n\nWhile Letters from Skye is at its heart a love story, Brockmole\u2019s graceful writing never succumbs to the sensational or the maudlin. Instead, she wisely lets the letters carry readers back to a time when war raged and life itself was writ large.",
+            "comments": [{
+                    "name": "Simant Verma",
+                    "date": "2017-02-28T00:00:00.000Z",
+                    "title": "A love story told uniquely",
+                    "rating": 4,
+                    "content": "\"If you knew how it feels to run after someone for a brief snatch of time, how the world stops spinning, just for a moment, when you hold them in your arms, and then starts again so fast that you fall to the ground, dizzy. If you knew how every hello hurts more than a hundred goodbyes. If you knew... A letter isn't always just a letter. Words on the page can drench the soul. If only you knew.\"\r\n\r\nThere are some books which have a good story and keep you entertained till the end. But then there are a few which are not only good but make you feel the emptions and live the lives of those characters. Jessica Brockmole's Letters from Skye was one of such book for me.\r\n\r\nThis book was unique in the way that the whole story was in the form of letters. Every and each part was in letters. The story is spanning over WWI and WWII. Two different eras are going simultaneously and the love story and lives of Elspeth Dunn and David Graham has been told and captured beautifully.\r\n\r\nThis story is basically about a poet and her fan who fell in love with each other through their letters. Time tested their love at various occasions. There were relationships sacrificed and families destroyed by the choices they made for the sake of their love, during the WWI. Then there is another story going simultaneously about Elspeth's daughter and her love during WWII. She tries to find the \"first imprint\" of her mother's life, as she knows nothing about her life while on Skye, through her mother's letters and her uncle."
+                },
+                {
+                    "name": "Jill Meyer",
+                    "date": "2017-07-29T00:00:00.000Z",
+                    "title": "A good book club choice",
+                    "rating": 3,
+                    "content": "First time author Jessica Brockmole has written a pleasant novel - using an epistolary form - set in two wars and the links that stretch between them. \"Letters From Skye\" is a nice afternoon read, but frankly, I was not too invested in the characters or the plot. I do think it will be a great book club choice because a few people sitting around talking about the book may make the book come more alive.\r\n\r\nFor the fiction reader who likes epistolary form novels, look for Elizabeth Forsythe Hailey's \"A Woman of Independent Means\", first published in 1976 and still available in Kindle and trade paper."
+                },
+                {
+                    "name": "Cathryn Conroy",
+                    "date": "2016-10-12T00:00:00.000Z",
+                    "title": "An Epistolary Treasure",
+                    "rating": 4,
+                    "content": "The craziest thing about this book is that it works! Written entirely in letters, it has a real plot populated by real characters that becomes a quite compelling read about lovers and families who are separated by war. Call me surprised. This is a book club selection or I might not have dared read it--and I'm so happy I did.\r\n\r\nAuthor Jessica Brokmole alternates the chapters between letters written to and from Elspeth during World War I and letters written to and from Margaret, Elspeth's daughter, during World War II. Elspeth lives on the Isle of Skye, Scotland at the opening of the book (hence the title) and leaves a lot of family secrets and mysteries for Margaret to unearth a generation later, including the identity of her father. The ending is a bit like a soap opera, but so what? It's fun! And really good.\r\n\r\nIt's a short, easy book to read that is also quite engrossing--an epistolary treasure!"
+                }
+            ]
+        },
+        {
+            "title": "THE TELEPORTATION ACCIDENT",
+            "genres": ["Fiction"],
+            "author": "Ned Beauman",
+            "imgSrc": "/assets/images/books/The_Teleportation_Accident.jpg",
+            "shortSummary": "British author Ned Beauman follows up his award-winning debut, Boxer, Beetle, with a novel equally bizarre, original and satisfying.The Teleportation Accident, which was longlisted for the Booker Prize, is the story of set designer Egon Loeser. We meet Egon in early 1930s Berlin. Hitler is beginning his climb to power and the nation grows more bellicose by the day, but Egon is apolitical to the..",
+            "ISBN": 9781620400227,
+            "published": "02/26/2013",
+            "qtyAvailable": 2,
+            "totalQty": 2,
+            "totalRating": 4.0,
+            "prologue": "The Teleportation Accident, which was longlisted for the Booker Prize, is the story of set designer Egon Loeser. We meet Egon in early 1930s Berlin. Hitler is beginning his climb to power and the nation grows more bellicose by the day, but Egon is apolitical to the point of obtuseness. He is concerned solely with his pursuit of the sultry Adele Hitler (no relation), a young woman whose charms have been widely sampled\u2014Egon being the exception.\r\n\r\nEgon\u2019s other obsession is Adriano Lavicini, a Renaissance set designer whose attempt to create a teleportation device for the stage resulted in a tragedy that may or may not have been abetted by the devil.\r\n\r\nIn his second novel, British author Ned Beauman takes the sort of risks that writers under 30 should take, but rarely do.\r\nEgon searches fruitlessly for Adele in Paris and then Los Angeles, where he becomes a reluctant member of the expat German community. He also bumbles his way into a murder investigation at CalTech, where a secret weapon, an actual teleportation device, is under development.\r\n\r\nEgon\u2019s two great loves\u2014Adele and himself\u2014are the driving forces of the novel. Egon is weak, banal and so solipsistic he should be royalty. In his indifference to the world beyond him, he is a monster. It won\u2019t take much reading before you realize that, given the choice, you\u2019d prefer to eat dinner at Hannibal Lecter\u2019s while Humbert Humbert babysits your teenage daughter than spend an evening in Egon\u2019s insipid company. Yet it works because the author, a special talent, pulls it off with style and without apology.\r\n\r\nThe Cambridge-educated Beauman lives in Istanbul and is the owner of a wonderfully spare website. He takes the sort of risks that writers under 30 should take, but rarely do. In his two novels\u2014the first dealt with bugs, eugenics, a weak, repressed homosexual and an utterly revolting young boxer\u2014he has yet to introduce one character wholly worthy of admiration, a feat that makes his works simultaneously fascinating, repelling and totally worthwhile.",
+            "comments": [{
+                    "name": "RaymondGW",
+                    "date": "2014-06-26T00:00:00.000Z",
+                    "title": "Very fun, witty & irreverent",
+                    "rating": 4,
+                    "content": "I didn't think I would like this book at first. It was very dry in the beginning and didn't seem like it was going to go anywhere. Then it went...all over the place, but in a great and enjoyable way. The attention given to recreating party scenes and realistic dialogue were much appreciated. The characters are very developed, especially the main character whom you can't help but to like even though he's a bit of a hopeless schlub. I liked the way the plot developed and the way that everything eventually comes full circle. It ends pretty much the only way it can and still be true to itself, and when you finish you find that you've gone on a very interesting journey and it's time for a nap."
+                },
+                {
+                    "name": "Robert Grant",
+                    "date": "2015-07-16T00:00:00.000Z",
+                    "title": "Enjoy the ride as his main character blunders his way ...",
+                    "rating": 4,
+                    "content": "This is as quirky a novel as I've ever read. Quirky doesn't always mean enjoyable but, in this case, it's remarkably enjoyable, despite its tenuous connection with reality, or even probability. Read it, enjoy the ride as his main character blunders his way through one ill-conceived encounter after another, then sit back and ponder what in heck might have caused this idea to take form in Mr. Beauman's weird imiagination."
+                },
+                {
+                    "name": "Richard Charles",
+                    "date": "2015-06-10T00:00:00.000Z",
+                    "title": "Treat!!!",
+                    "rating": 5,
+                    "content": "Sumptuous writing that is about one step less intense than Jeff Vandermeer (in a good way). Great saga that is really inside the head of the not-so-likeable protagonist. Takes you to unexpected places all with plausible (a few deus ex machina events, which are a bit jarring but excusable in the service of the story) background info."
+                }
+            ]
+        },
+        {
+            "title": "ng-book: The Complete Guide to Angular4",
+            "genres": ["Web Technology"],
+            "author": " Felipe Coury, Ari Lerner, Nate Murray,  Carlos Taborda",
+            "imgSrc": "/assets/images/books/angular4.jpg",
+            "shortSummary": "Ready to master Angular 4?\r\n\r\nWhat if you could master the entire framework - with solid foundations - in less time without beating your head against a wall? Imagine how quickly you could work if you knew the best practices and the best tools?\r\n\r\nStop wasting your time searching and have everything you need to be productive in one, well-organized place, with complete examples to get your project up without needing to resort to endless hours of ..",
+            "ISBN": 9781546376231,
+            "published": "04/27/2017",
+            "qtyAvailable": 3,
+            "totalQty": 3,
+            "totalRating": 5.0,
+            "prologue": "Ready to master Angular 4?\r\n\r\nWhat if you could master the entire framework - with solid foundations - in less time without beating your head against a wall? Imagine how quickly you could work if you knew the best practices and the best tools?\r\n\r\nStop wasting your time searching and have everything you need to be productive in one, well-organized place, with complete examples to get your project up without needing to resort to endless hours of research.\r\n\r\nYou will learn what you need to know to work professionally with ng-book: The Complete Book on Angular 4.\r\n\r\nGet up and running quickly\r\n\r\nThe first chapter opens with building your first Angular 4 app. Within the first few minutes, you'll know enough to have an app running\r\n\r\nLots of Sample Apps and Code\r\n\r\nWhen you buy ng-book, you're not buying just a book, but dozens of code examples. Every chapter in the book comes with a complete project that uses the concepts in the chapter. The code is available for download, free from our website.\r\nComprehensive\r\n\r\nYou'll learn core Angular 4 concepts - from how Angular works under the hood, to rich interactive components, from in-depth testing to real-world applications\r\n\r\nBest Practices\r\n\r\nLearn Angular 4 best practices, such as: testing, code organization, and how to structure your app for performance. We'll walk through practical, common examples of how to implement complete components of your applications\r\n\r\nExample Apps included in the book\r\n\r\nThe book comes with sample apps that show you how to create:\r\n\r\nA component-based Reddit clone\r\nA real-time chat app using RxJS Observables\r\nA YouTube search-as-you-type app\r\nA Spotify search for tracks with playable song preview\r\nPlus lots more mini-examples that show you how to write Components, how to use Forms, and how to use APIs\r\nThe code examples currently have over 5,500+ lines of runnable code (TypeScript, non-comment lines)",
+            "comments": [{
+                    "name": "Cassi M",
+                    "date": "2017-11-24T00:00:00.000Z",
+                    "title": "5 stars",
+                    "rating": 5,
+                    "content": "Really complete book to both beginners and expert looking to know more about angular"
+                },
+                {
+                    "name": "Teresa",
+                    "date": "2017-08-09T00:00:00.000Z",
+                    "title": "A must for anyone learning Angular or upgrading skills to 4",
+                    "rating": 5,
+                    "content": "I love it. This book made the core concepts click and has given me confidence to know what code to write, what is next, and why I am doing it. I am currently building a custom customer portal using what I have learned. Everything is off to a great start thanks to your book. The book is a must!\r\n\r\nI also appreciate that the team who put the book together has been in touch to check on my progress, find out if there are any open questions, and get feedback. It is great to find people who are so passionate about what they do."
+                }
+            ]
+        },
+        {
+            "title": "Angels and Demons",
+            "genres": ["Crime Fiction", "Thriller", "Mystery", "Suspense"],
+            "author": " Dan Brown",
+            "imgSrc": "/assets/images/books/Angels_and_Demons.jpg",
+            "shortSummary": "‘Angels and Demons’ is a plot where a globally celebrated scientist, Leonardo Vetra of CERN Institute, Switzerland is killed and a mystifying symbol is branded into his torso. The Vatican, Rome: The College of Cardinals has gathered for deciding upon a new Pope. Underneath the gathering lies a bomb which is extremely powerful and..",
+            "ISBN": 9781546376231,
+            "published": "04/27/2017",
+            "qtyAvailable": 10,
+            "totalQty": 10,
+            "totalRating": 5.0,
+            "prologue": "'Angels and Demons' is a plot where a globally celebrated scientist, Leonardo Vetra of CERN Institute, Switzerland is killed and a mystifying symbol is branded into his torso. The Vatican, Rome: The College of Cardinals has gathered for deciding upon a new Pope. Underneath the gathering lies a bomb which is extremely powerful and is persistently reckoning towards destruction.\r\n\r\nProfessor Robert Langdon of Harvard has to decode a complex track consisting of some prehistoric symbols in order to overpower people who are guilty. He is stunned upon coming to terms with the fact that Illuminati, a secret society that was declared as vanished some 400 years ago, is still very much into action, as their ancient symbol was the one that was found on the dead scientist\u2019s chest. The main goal of Illuminati has always been to go against the Catholic Church and its preaching. So, Langdon and Vittoria, who is Vetra\u2019s daughter set upon a thrilling search in order to hunt for that particular nucleon-bomb substance which has been fixed under the Vatican City to destroy the city and its significant civilization. ",
+            "comments": [{
+                    "name": "Anonymous1",
+                    "date": "2017-01-06T00:00:00.000Z",
+                    "title": "Best page-turner I have ever read!!!",
+                    "rating": 5,
+                    "content": "And I am left STUNNED. Incredibly, this one is the one to top when it comes to adventure and history and pace and ingenuity.\r\n\r\nI've recently noticed how much history is revered (rightfully) by the modern authors. This is a different type of historical immersion. This is about bringing it to the forefront... something in the past is incredibly relevant, vital, to the present.\r\n\r\nEveryone but me had read this, & after Da Vinci Code--that bitch of an overrated heathen--I thought Brown was a phony (in company of Nicholas Sparks, among others). Not so. This is a MASTERPIECE, indeed.\r\nI read this in like two sittings.\r\nI was soooo hooked I recalled many other lesser books that have riveted me. This one is so incredibly put together, it is no wonder Brown has been heralded by the general readership, ingrained in the zeitgeist.\r\n\r\nThe awesomeness of this work lies in the battle between science and religion, perhaps one of the most seminal works about that topic. It explores this duality literally, symbolically... every which way. That they are married, both science and religion, is the thesis. Brown proves this with the precision of a skilled scientist. And with the heart of a devout... historian."
+                },
+                {
+                    "name": "Kay sayed",
+                    "date": "2017-12-01T00:00:00.000Z",
+                    "title": "Must read!!!",
+                    "rating": 5,
+                    "content": "This novel will give you a total roller coaster ride. Things just keep happening one after the other. The best part about this novel is that it catches the interest of reader in the very start. And you're then forced to read it non stop. This novel is quite big but you'll finish it in no time. It also give you knowledge about ancient history of rome and their culture."
+                },
+                {
+                    "name": "Anindya Kumar Das",
+                    "date": "2017-05-08T00:00:00.000Z",
+                    "title": "Best of the best",
+                    "rating": 5,
+                    "content": "Best of the best. Best after da Vinci code and lost symbols. Better to read than watch movie a little more in this novel than movie"
+                },
+                {
+                    "name": "Bivash Rath",
+                    "date": "2017-11-21T00:00:00.000Z",
+                    "title": "Can you be ever be disappointed by Dan Brown",
+                    "rating": 5,
+                    "content": "Can you be ever be disappointed by Dan Brown. Heck no. And if you are a history buff it adds to the excitement. For those who have seen the movie but haven't read the book yet, please do read the book. It is far more gripping"
+                }
+            ]
+        },
+        {
+            "title": "The Immortals of Meluha (Shiva Trilogy)",
+            "genres": ["Myth", "Legend", "Saga"],
+            "author": "Amish",
+            "imgSrc": "/assets/images/books/Immortals_of_Meluha.jpg",
+            "shortSummary": "‘An intense story 'The Immortals of Meluha' draws heavily from stories and legends of Hindu mythology that have been passed on from generation to generation.\r\n\r\nFirst book of the trilogy, the Immortals tale unfolds in Meluha, a land that is ruled by the Suryavanshi tribe that firmly believes in the prophecy of 'Neelkanth' Shiva being their saviour. The Suryavanshi\u2019s (Sun worshipers) are of the firm belief that it would be Shiva who would save them from..",
+            "ISBN": 9789380658742,
+            "published": "07/24/2017",
+            "qtyAvailable": 2,
+            "totalQty": 2,
+            "totalRating": 5.0,
+            "prologue": "An intense story 'The Immortals of Meluha' draws heavily from stories and legends of Hindu mythology that have been passed on from generation to generation.\r\n\r\nFirst book of the trilogy, the Immortals tale unfolds in Meluha, a land that is ruled by the Suryavanshi tribe that firmly believes in the prophecy of 'Neelkanth' Shiva being their saviour. The Suryavanshi\u2019s (Sun worshipers) are of the firm belief that it would be Shiva who would save them from the wrath of Chandravanshi\u2019s (Moon worshipers).\r\n\r\nBlending mythology and philosophy drawn from Hindu traditions, the gripping narrative moves with speed to have Shiva step up to take it upon himself about banishing evil from society.\r\n\r\nAs the tribal leader of Meluha, somewhere in Tibet, Shiva decides to help the Suryavanshi's in their fight against the Chandravanshi, who have allied with the Nagas, a cursed tribe.\r\n\r\nAs the drama unfolds, Shiva, the tribal leader from Tibet, gets caught up between the two warring groups, where a realization dawns upon him of how his choice was affecting the war outcome as well as of aspirations of rising above the conflict and its actors begins to dominate the narrative.\r\n\r\nThe author has creatively woven the legend of Lord Shiva; His marriage to King Daksha's daughter Sati is this first part of the trilogy.\r\n\r\n'Secret of Nagas' and 'Oath of the Vayuputras' the second and third part of the same narrative take the story forward as the first part ends with Shiva charging to save Sati from being taken captive by the Naga's.\r\n\r\nSpread out in 415 pages, 'The Immortals of Meluha' was first published in 2011. After a slow start, the book soon turned a bestseller and more than two million copies have been sold. Till date it has been translated in fourteen languages.",
+            "comments": [{
+                    "name": "Sunny Makode",
+                    "date": "2017-11-29T00:00:00.000Z",
+                    "title": "How can someone write such a great epic in such a human way possible",
+                    "rating": 5,
+                    "content": "How can someone write such a great epic in such a human way possible ?\r\n\r\nHats off to Amish Sir for his great research and work.\r\n\r\nWow..\r\n\r\nI love every piece of this book.\r\nI must say,\r\nI started admiring our own roots of Indus valley collectively our Sapta Sindu originated Indian culture more after reading this book.\r\n\r\nThe Universe bows to Lord Shiva\r\nI bow to Lord Shiva."
+                },
+                {
+                    "name": "Nikhil kumar",
+                    "date": "2017-12-14T00:00:00.000Z",
+                    "title": "Killer imagination.",
+                    "rating": 5,
+                    "content": "What a imagination Amish have.\r\nAnd what a book it is no need to review.\r\nExcellent masterpiece.\r\nPage quality is excellent.\r\nPrinting size is quite big.\r\nLanguage is little bit difficult for not so good readers.\r\nMore than 400 pages.\r\nDashing story of good shiva."
+                }
+            ]
+        }
+    ]
 }

@@ -37,8 +37,7 @@ bookIndex: number;
         for (const book of this.books.bookList) {
                       if (book.ISBN === isbn) {
                         this.bookIndex = this.books.bookList.indexOf(book);
-                        localStorage.setItem('booksData', JSON.stringify(this.books));
-                        // sessionStorage.setItem('bookDetailsIndex', JSON.stringify(this.bookIndex));
+                        // localStorage.setItem('booksData', JSON.stringify(this.books));
                         return Observable.of(book);
                       }
                   }
@@ -46,10 +45,24 @@ bookIndex: number;
   }
 
   insertReview(value) {
+    var totalRating = 0;
 
+    this.books = JSON.parse(localStorage.getItem('booksData'));
     this.books.bookList[this.bookIndex].comments.push(value);
+
+    for(const comment of this.books.bookList[this.bookIndex].comments)
+        {
+          totalRating+= comment.rating;
+        }
+    totalRating/=this.books.bookList[this.bookIndex].comments.length;
+    this.books.bookList[this.bookIndex].totalRating = totalRating;
     localStorage.setItem('booksData', JSON.stringify(this.books));
     // let newReview= JSON.stringify(this.books);
     // this.http.post('./../../assets/data.json', newReview);
+  }
+  updateQty(qty):any {
+    this.books = JSON.parse(localStorage.getItem('booksData'));
+    this.books.bookList[this.bookIndex].qtyAvailable = qty;
+    localStorage.setItem('booksData', JSON.stringify(this.books));
   }
 }

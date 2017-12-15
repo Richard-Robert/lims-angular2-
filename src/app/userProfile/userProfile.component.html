@@ -5,123 +5,123 @@
             <img class="img-circle displayPicture" src={{profile.picture}} alt="">
             <hr class="solidGreyHr margBot0" />
             <div class="row">
-                <h2 class="col-md-push-2 col-md-6">Account Details</h2>
-                <button *ngIf="!editAccountFlag" class="btn btn-primary col-md-push-3 col-md-1 margTop7" (click)="editAccDetails()">Edit</button>
-                <button *ngIf="editAccountFlag" class="btn btn-danger col-md-push-3 col-md-1 margTop7" (click)="saveAccDetails(false)">Cancel</button>
-                <button *ngIf="editAccountFlag" class="btn btn-success col-md-push-3 col-md-1 margTop7" (click)="saveAccDetails(true)">Save</button>
+                <h2 class="col-md-push-2 col-xs-push-1 col-sm-6 col-xs-7">Account Details</h2>
+                <button *ngIf="!editAccountFlag" class="btn btn-primary col-md-push-3 col-xs-push-2 col-md-1 col-xs-2 margTop7" (click)="editAccDetails()">Edit</button>
+                <button *ngIf="editAccountFlag" class="btn btn-warning col-md-push-3  col-md-1 col-xs-2 margTop7" (click)="saveAccDetails(false)">Cancel</button>
+                <button *ngIf="editAccountFlag" class="btn btn-success col-md-push-3 col-md-1 col-xs-2 margTop7" (click)="saveAccDetails(true)">Save</button>
             </div>
             <hr class="solidGreyHr margTop7" />
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Created At : </span>
-                    <span class="col-sm-7">{{profile.created_at|date}}</span>
+                    <span class="bold col-md-4">Created At : </span>
+                    <span class="col-md-7">{{profile.created_at|date}}</span>
                     <!--<input id="email" type="text">-->
                 </div>
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Last Login : </span>
-                    <span class="col-sm-7">{{profile.last_login|date}}</span>
+                    <span class="bold col-md-4">Last Login : </span>
+                    <span class="col-md-7">{{profile.last_login|date}}</span>
                 </div>
             </div>
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Email : </span>
-                    <span class="col-sm-7" *ngIf="!editAccountFlag">{{profile.email}}</span>
+                    <span class="bold col-md-4">Email : </span>
+                    <span class="col-md-7" *ngIf="!editAccountFlag">{{profile.email}}</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.email" *ngIf="editAccountFlag" type="text" placeholder="email">
                 </div>
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Username : </span>
-                    <span class="col-sm-7" *ngIf="!editAccountFlag">{{profile.username}}</span>
+                    <span class="bold col-md-4">Username : </span>
+                    <span class="col-md-7" *ngIf="!editAccountFlag">{{profile.username}}</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.username" *ngIf="editAccountFlag" type="text" placeholder="username">
                 </div>
             </div>
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Phone Number : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.phone_number && !editAccountFlag">{{profile.user_metadata.phone_number}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.phone_number) && !editAccountFlag">N/A</span>
+                    <span class="bold col-md-4">Phone Number : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.phone_number && !editAccountFlag">{{profile.user_metadata.phone_number}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.phone_number) && !editAccountFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.phone_number" *ngIf="editAccountFlag" type="number" placeholder="Phone Number(only digits)">
                 </div>
             </div>
             <hr class="solidGreyHr margBot0" />
             <div class="row">
-                <h2 class="col-md-push-2 col-md-6">Personal Details</h2>
-                <button *ngIf="!editPersonalFlag" class="btn btn-primary col-md-push-3 col-md-1 margTop7" (click)="editPerDetails()">Edit</button>
-                <button *ngIf="editPersonalFlag" class="btn btn-danger col-md-push-3 col-md-1 margTop7" (click)="savePerDetails(false)">Cancel</button>
-                <button *ngIf="editPersonalFlag" class="btn btn-success col-md-push-3 col-md-1 margTop7" (click)="savePerDetails(true)">Save</button>
+                <h2 class="col-md-push-2 col-xs-push-1 col-sm-6 col-xs-7">Personal Details</h2>
+                <button *ngIf="!editPersonalFlag" class="btn btn-primary col-md-push-3 col-xs-push-2 col-md-1 col-xs-2 margTop7" (click)="editPerDetails()">Edit</button>
+                <button *ngIf="editPersonalFlag" class="btn btn-warning col-md-push-3  col-md-1 col-xs-2 margTop7" (click)="savePerDetails(false)">Cancel</button>
+                <button *ngIf="editPersonalFlag" class="btn btn-success col-md-push-3  col-md-1 col-xs-2 margTop7" (click)="savePerDetails(true)">Save</button>
             </div>
             <hr class="solidGreyHr margTop7" />
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">First Name : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.first_name && !editPersonalFlag">{{profile.user_metadata.first_name}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.first_name) && !editPersonalFlag">N/A</span>
+                    <span class="bold col-md-4">First Name : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.first_name && !editPersonalFlag">{{profile.user_metadata.first_name}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.first_name) && !editPersonalFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.first_name" *ngIf="editPersonalFlag" type="text" placeholder="first name">
                 </div>
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Last Name : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.last_name && !editPersonalFlag">{{profile.user_metadata.last_name}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.last_name) && !editPersonalFlag">N/A</span>
+                    <span class="bold col-md-4">Last Name : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.last_name && !editPersonalFlag">{{profile.user_metadata.last_name}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.last_name) && !editPersonalFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.last_name" *ngIf="editPersonalFlag" type="text" placeholder="last name">
                 </div>
             </div>
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Age : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.age && !editPersonalFlag">{{profile.user_metadata.age}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.age) && !editPersonalFlag">N/A</span>
+                    <span class="bold col-md-4">Age : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.age && !editPersonalFlag">{{profile.user_metadata.age}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.age) && !editPersonalFlag">N/A</span>
                     <input class="form-control col-md-4" type="number" [(ngModel)]="profile.user_metadata.age" *ngIf="editPersonalFlag" type="text" placeholder="age">
                 </div>
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Profession : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.profession && !editPersonalFlag">{{profile.user_metadata.profession}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.profession) && !editPersonalFlag">N/A</span>
+                    <span class="bold col-md-4">Profession : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.profession && !editPersonalFlag">{{profile.user_metadata.profession}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.profession) && !editPersonalFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.profession" *ngIf="editPersonalFlag" type="text" placeholder="profession">
                 </div>
             </div>
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-11 row">
-                    <span class="bold col-sm-2">Address : </span>
-                    <span class="col-sm-8" *ngIf="profile.user_metadata && profile.user_metadata.address && !editPersonalFlag">{{profile.user_metadata.address}}</span>
-                    <span class="col-sm-8" *ngIf="!(profile.user_metadata && profile.user_metadata.address) && !editPersonalFlag">N/A</span>
+                    <span class="bold col-md-2">Address : </span>
+                    <span class="col-md-8" *ngIf="profile.user_metadata && profile.user_metadata.address && !editPersonalFlag">{{profile.user_metadata.address}}</span>
+                    <span class="col-md-8" *ngIf="!(profile.user_metadata && profile.user_metadata.address) && !editPersonalFlag">N/A</span>
                     <textarea [(ngModel)]="profile.user_metadata.address" *ngIf="editPersonalFlag" class="form-control width70" rows="3" cols="" maxlength="200" placeholder="Address (limit 200 characters)"></textarea>
                 </div>
             </div>
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-11 row">
-                    <span class="bold col-sm-2">Interests : </span>
-                    <span class="col-sm-8" *ngIf="profile.user_metadata && profile.user_metadata.interests && !editPersonalFlag">{{profile.user_metadata.interests}}</span>
-                    <span class="col-sm-8" *ngIf="!(profile.user_metadata && profile.user_metadata.interests) && !editPersonalFlag">N/A</span>
+                    <span class="bold col-md-2">Interests : </span>
+                    <span class="col-md-8" *ngIf="profile.user_metadata && profile.user_metadata.interests && !editPersonalFlag">{{profile.user_metadata.interests}}</span>
+                    <span class="col-md-8" *ngIf="!(profile.user_metadata && profile.user_metadata.interests) && !editPersonalFlag">N/A</span>
                     <textarea [(ngModel)]="profile.user_metadata.interests" *ngIf="editPersonalFlag" class="form-control width70" rows="3" cols="" maxlength="200" placeholder="Interests (limit 200 characters)"></textarea>
                 </div>
             </div>
 
             <hr class="solidGreyHr margBot0" />
             <div class="row">
-                <h2 class="col-md-push-2 col-md-6">Favourites</h2>
-                <button *ngIf="!editFavouritesFlag" class="btn btn-primary col-md-push-3 col-md-1 margTop7" (click)="editFavDetails()">Edit</button>
-                <button *ngIf="editFavouritesFlag" class="btn btn-danger col-md-push-3 col-md-1 margTop7" (click)="saveFavDetails(false)">Cancel</button>
-                <button *ngIf="editFavouritesFlag" class="btn btn-success col-md-push-3 col-md-1 margTop7" (click)="saveFavDetails(true)">Save</button>
+                <h2 class="col-md-push-2 col-xs-push-1 col-sm-6 col-xs-7">Favourites</h2>
+                <button *ngIf="!editFavouritesFlag" class="btn btn-primary col-md-push-3 col-xs-push-2 col-md-1 col-xs-2 margTop7" (click)="editFavDetails()">Edit</button>
+                <button *ngIf="editFavouritesFlag" class="btn btn-warning col-md-push-3  col-md-1 col-xs-2 margTop7" (click)="saveFavDetails(false)">Cancel</button>
+                <button *ngIf="editFavouritesFlag" class="btn btn-success col-md-push-3  col-md-1 col-xs-2 margTop7" (click)="saveFavDetails(true)">Save</button>
             </div>
             <hr class="solidGreyHr margTop7" />
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Genre : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.fav_genre && !editFavouritesFlag">{{profile.user_metadata.fav_genre}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.fav_genre) && !editFavouritesFlag">N/A</span>
+                    <span class="bold col-md-4">Genre : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.fav_genre && !editFavouritesFlag">{{profile.user_metadata.fav_genre}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.fav_genre) && !editFavouritesFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.fav_genre" *ngIf="editFavouritesFlag" type="text" placeholder="favourite genre">
                 </div>
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Author : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.fav_author && !editFavouritesFlag">{{profile.user_metadata.fav_author}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.fav_author) && !editFavouritesFlag">N/A</span>
+                    <span class="bold col-md-4">Author : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.fav_author && !editFavouritesFlag">{{profile.user_metadata.fav_author}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.fav_author) && !editFavouritesFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.fav_author" *ngIf="editFavouritesFlag" type="text" placeholder="favourite author">
                 </div>
             </div>
             <div class="row col-md-offset-2 col-sm-offset-1 col-xs-offset-3">
                 <div class="userDetails col-sm-6 row">
-                    <span class="bold col-sm-4">Book : </span>
-                    <span class="col-sm-7" *ngIf="profile.user_metadata && profile.user_metadata.fav_book && !editFavouritesFlag">{{profile.user_metadata.fav_book}}</span>
-                    <span class="col-sm-7" *ngIf="!(profile.user_metadata && profile.user_metadata.fav_book) && !editFavouritesFlag">N/A</span>
+                    <span class="bold col-md-4">Book : </span>
+                    <span class="col-md-7" *ngIf="profile.user_metadata && profile.user_metadata.fav_book && !editFavouritesFlag">{{profile.user_metadata.fav_book}}</span>
+                    <span class="col-md-7" *ngIf="!(profile.user_metadata && profile.user_metadata.fav_book) && !editFavouritesFlag">N/A</span>
                     <input class="form-control col-md-4" [(ngModel)]="profile.user_metadata.fav_book" *ngIf="editFavouritesFlag" type="text" placeholder="favourite book">
                 </div>
             </div>

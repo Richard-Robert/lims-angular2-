@@ -40,8 +40,7 @@ ngOnDestroy(): any {
 
 }
 bookDetailsNavigate(isbn) {
-this.router.navigate(['/details', isbn]);
-
+  this.router.navigate(['/details', isbn]);
 }
 
 }

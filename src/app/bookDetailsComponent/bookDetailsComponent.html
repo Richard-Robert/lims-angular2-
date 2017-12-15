@@ -7,22 +7,28 @@
                     <img src={{bookDetails.imgSrc}} alt="The Tethered Mage" class="thumbnail">
                 </div>
                 <div>
-                    <label for="test">Rating : </label>
+                    <label>Rating : </label>
                     <rating [(ngModel)]="bookDetails.totalRating" [readonly]="true" class="redStar"></rating>
                 </div>
                 <div class="">
-                    <label for="test">ISBN : </label><span id="test" class="darkerRed bold">   {{bookDetails.ISBN}}</span>
+                    <label>ISBN : </label><span class="darkerRed bold">   {{bookDetails.ISBN}}</span>
                 </div>
                 <div>
-                    <label for="test">Author : </label><span id="test" class="darkerRed italics bold"> {{bookDetails.author}}</span>
+                    <label>Author : </label><span class="darkerRed italics bold"> {{bookDetails.author}}</span>
                 </div>
                 <div>
-                    <label *ngIf="bookDetails.published" for="test">Published : </label><span id="test" class="darkerRed bold"> {{bookDetails.published}}</span>
+                    <label *ngIf="bookDetails.published">Published : </label><span class="darkerRed bold"> {{bookDetails.published}}</span>
                 </div>
-                <div class="row">
-                    <button class="btn btn-warning col-xs-3" *ngIf="" (click)="issueBook()">Issue</button>
-                    <button class="btn btn-danger col-xs-3" *ngIf="">Return</button>
-                    <button class=" btn btn-success col-xs-3" *ngIf="">Renew</button>
+                <div>
+                    <label *ngIf="bookDetails.qtyAvailable">Copies Available : </label><span class="darkerRed bold"> {{bookDetails.qtyAvailable}} / {{bookDetails.totalQty}}</span>
+                </div>
+                <div class="row" *ngIf="auth.isAuthenticated()">
+                    <button class="btn btn-primary col-xs-push-1 col-xs-4" *ngIf="!issuedFlag" (click)="issueBook()">Issue</button>
+                    <button class="btn btn-success col-xs-3" *ngIf="issuedFlag" (click)="returnBook()" title="Renews for 7 days from now">Return</button>
+                    <button class=" btn btn-warning col-xs-3" *ngIf="issuedFlag" (click)="renewBook()">Renew</button>
+                </div>
+                <div *ngIf="issuedFlag && returnDate">
+                    <span class="bold ">Return By : </span><span class="italics">{{returnDate|date}}</span>
                 </div>
             </div>
             <div class="BookListSecondDiv col-md-8 ">
@@ -60,7 +66,7 @@
             <h2>Write a Review</h2>
             <form [formGroup]="reviewForm " (ngSubmit)="validateReviewForm() ">
                 <div class="ratingStars row ">
-                    <rating [(ngModel)]="starValue " [formControl]="reviewForm.controls[ 'rating'] " [max]=5 (click)="test() " [float]="true " class="redStar col-md-offset-3 col-xs-offset-1 " [titles]="[ 'Poor', 'Average', 'Good', 'Very Good',
+                    <rating [formControl]="reviewForm.controls['rating'] " [max]=5 [float]="true" class="redStar col-md-offset-3 col-xs-offset-1 " [titles]="[ 'Poor', 'Average', 'Good', 'Very Good',
                         'Excellent'] "></rating>
                 </div>
                 <div class="col-md-push-2 col-md-8 ">
