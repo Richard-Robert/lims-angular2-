@@ -37,6 +37,12 @@ export class AppComponent implements OnInit{
             }
           )
         }
+        else{
+          if(lastVisitedRoute.params)
+              this.router.navigate(['/'+lastVisitedRoute.url,lastVisitedRoute.params]);
+            else
+              this.router.navigate(['/'+lastVisitedRoute.url]);
+        }
 
       });
 

@@ -9,15 +9,15 @@
                     <span class="red bold">* </span><label>ISBN : </label><input type="number" class="form-control" placeholder="Enter book ISBN(10 or 13 digit)" [formControl]="addForm.controls['ISBN']">
                 </div>
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Title : </label><input class="form-control" placeholder="Enter book title" [formControl]="addForm.controls['title']">
+                    <span class="red bold">* </span><label>Title : </label><input class="form-control" placeholder="Enter book title(min 3 chars)" [formControl]="addForm.controls['title']">
                 </div>
             </div>
             <div class="row innerFormDiv">
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Author : </label><input class="form-control" placeholder="Author's name" [formControl]="addForm.controls['author']">
+                    <span class="red bold">* </span><label>Author : </label><input class="form-control" placeholder="Author's name(min 3 chars)" [formControl]="addForm.controls['author']">
                 </div>
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Image source : </label><input class="form-control" placeholder="url to the image source" [formControl]="addForm.controls['imgSrc']">
+                    <span class="red bold">* </span><label>Image source : </label><input class="form-control" placeholder="url to the image source(min 3 chars)" [formControl]="addForm.controls['imgSrc']">
                 </div>
             </div>
             <div class="row innerFormDiv">
@@ -33,15 +33,15 @@
                     <label>Book Rating (optional) : </label><input type="number" class="form-control" placeholder="Rating out of 5" [formControl]="addForm.controls['totalRating']">
                 </div>
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Genres : </label><input class="form-control" placeholder="Separate the different genres by comma" [formControl]="addForm.controls['genres']">
+                    <span class="red bold">* </span><label>Genres : </label><input class="form-control" placeholder="Separate the different genres by comma(min 3 chars)" [formControl]="addForm.controls['genres']">
                 </div>
             </div>
             <div class="row innerFormDiv">
                 <div class="col-md-12">
-                    <span class="red bold">* </span><label>Short Summary : </label><textarea class="form-control" placeholder="Short Summary" [formControl]="addForm.controls['shortSummary']" rows="" cols=""></textarea>
+                    <span class="red bold">* </span><label>Short Summary : </label><textarea class="form-control" placeholder="Short Summary(minimum 3 characters)" [formControl]="addForm.controls['shortSummary']" rows="" cols=""></textarea>
                 </div>
                 <div class="col-md-12">
-                    <span class="red bold">* </span><label>Prologue : </label><textarea class="form-control" placeholder="Detailed description" [formControl]="addForm.controls['prologue']" rows="" cols=""></textarea>
+                    <span class="red bold">* </span><label>Prologue : </label><textarea class="form-control" placeholder="Detailed description(minimum 10 characters)" [formControl]="addForm.controls['prologue']" rows="" cols=""></textarea>
                 </div>
             </div>
             <span class="italics"><span class="red">* </span> Indicates required field</span>
@@ -60,15 +60,15 @@
                     <span class="red bold">* </span><label>ISBN : </label><input type="number" class="form-control" placeholder="Enter book ISBN(10 or 13 digit)" [formControl]="editForm.controls['ISBN']">
                 </div>
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Title : </label><input class="form-control" placeholder="Enter book title" [formControl]="editForm.controls['title']">
+                    <span class="red bold">* </span><label>Title : </label><input class="form-control" placeholder="Enter book title(min 3 chars)" [formControl]="editForm.controls['title']">
                 </div>
             </div>
             <div class="row innerFormDiv">
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Author : </label><input class="form-control" placeholder="Author's name" [formControl]="editForm.controls['author']">
+                    <span class="red bold">* </span><label>Author : </label><input class="form-control" placeholder="Author's name(min 3 chars)" [formControl]="editForm.controls['author']">
                 </div>
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Image source : </label><input class="form-control" placeholder="url to the image source" [formControl]="editForm.controls['imgSrc']">
+                    <span class="red bold">* </span><label>Image source : </label><input class="form-control" placeholder="url to the image source(min 3 chars)" [formControl]="editForm.controls['imgSrc']">
                 </div>
             </div>
             <div class="row innerFormDiv">
@@ -83,7 +83,7 @@
             <div class="row innerFormDiv">
 
                 <div class="col-md-6">
-                    <span class="red bold">* </span><label>Genres : </label><input class="form-control" placeholder="Separate the different genres by comma" [formControl]="editForm.controls['genres']">
+                    <span class="red bold">* </span><label>Genres : </label><input class="form-control" placeholder="Separate the different genres by comma(min 3 chars)" [formControl]="editForm.controls['genres']">
                 </div>
                 <div class="col-md-6">
                     <span class="red bold">* </span><label>Published Date : </label><input class="form-control" placeholder="Date the book was published" [formControl]="editForm.controls['published']">
@@ -91,10 +91,10 @@
             </div>
             <div class="row innerFormDiv">
                 <div class="col-md-12">
-                    <span class="red bold">* </span><label>Short Summary : </label><textarea class="form-control" placeholder="Short Summary" [formControl]="editForm.controls['shortSummary']" rows="" cols=""></textarea>
+                    <span class="red bold">* </span><label>Short Summary : </label><textarea class="form-control" placeholder="Short Summary(minimum 3 characters)" [formControl]="editForm.controls['shortSummary']" rows="" cols=""></textarea>
                 </div>
                 <div class="col-md-12">
-                    <span class="red bold">* </span><label>Prologue : </label><textarea class="form-control" placeholder="Detailed description" [formControl]="editForm.controls['prologue']" rows="" cols=""></textarea>
+                    <span class="red bold">* </span><label>Prologue : </label><textarea class="form-control" placeholder="Detailed description (minimum 10 characters)" [formControl]="editForm.controls['prologue']" rows="" cols=""></textarea>
                 </div>
             </div>
             <span class="italics"><span class="red">* </span> Indicates required field</span>

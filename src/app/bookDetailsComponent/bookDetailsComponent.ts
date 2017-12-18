@@ -44,7 +44,9 @@ this.sub = this.activatedRoute.params.subscribe(params => {
        // In a real app: dispatch action to load the details here.
     });
 this.profile = this.mainAppService.getProfile();
-this.auth.getUser(this.profile.sub).subscribe(
+if(this.profile && this.auth.isAuthenticated())
+{
+      this.auth.getUser(this.profile.sub).subscribe(
               data => {
                       this.profile = data;
                       if(this.profile.user_metadata && this.profile.user_metadata.booksIssued)
@@ -66,6 +68,15 @@ this.reviewForm = this._formBuidler.group({
   'rating': [null, Validators.compose([Validators.required, Validators.min(0)])],
   'content': ['', Validators.compose([Validators.required, Validators.minLength(3)])]
 })
+}
+else {
+  this.reviewForm = this._formBuidler.group({
+  'name':'',
+  'date': [null],
+  'rating': [null, Validators.compose([Validators.required, Validators.min(0)])],
+  'content': ['', Validators.compose([Validators.required, Validators.minLength(3)])]
+})
+}
 }
 ngOnDestroy () {
   this.sub.unsubscribe();

@@ -51,6 +51,8 @@ this.profile = this.mainAppService.getProfile();
 this.auth.getUser(this.profile.sub).subscribe(
               data => {
                       this.profile = data;
+                      if(!this.profile.user_metadata)
+                          this.profile.user_metadata={};
                     }
               );
 
@@ -67,7 +69,6 @@ this.tempAccDetails.phone = this.profile.user_metadata.phone_number;
 saveAccDetails(flag):any {
 
   if(flag){
-
     var body = {
           connection:"Username-Password-Authentication",
           username:this.profile.username,
